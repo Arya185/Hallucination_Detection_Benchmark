@@ -1,6 +1,6 @@
 # Self-Consistency vs. Source-Grounded NLI for Hallucination Detection
 
-Empirical comparison of two black-box hallucination-detection strategies for LLM-generated summaries — measuring where behavioral self-consistency checking succeeds and fails relative to direct source-grounded entailment.
+Empirical comparison of two black-box hallucination-detection strategies for LLM-generated summaries, measuring where behavioral self-consistency checking succeeds and fails relative to direct source-grounded entailment.
 
 ![Python](https://img.shields.io/badge/Python-3.14-blue)
 ![OpenAI SDK](https://img.shields.io/badge/OpenAI%20SDK-via%20OpenRouter-black)
@@ -12,151 +12,410 @@ Empirical comparison of two black-box hallucination-detection strategies for LLM
 
 ## 1. Key Findings
 
-**Research question:** for claims injected into LLM-generated summaries, how does the catch rate of black-box self-consistency checking (**Method A**) vary across claim type, and does source-grounded entailment (**Method B**) catch a distinct set of failures?
+### Research Question
+
+For claims injected into LLM-generated summaries, how does the catch rate of black-box self-consistency checking (**Method A**) vary across claim type, and does source-grounded entailment (**Method B**) catch a distinct set of failures?
 
 **Model under test:** `openai/gpt-4o-mini`, called through the OpenRouter API for both generation and verification.
 
-### Catch rate (recall) on injected unsupported claims
+### Catch Rate (Recall) on Injected Unsupported Claims
 
-| Category | N | Method A (Self-Consistency) | Method B (Source-Grounded NLI) |
-|---|:---:|:---:|:---:|
-| Numerical fabrication | 11 | 100.0% (11/11) | 100.0% (11/11) |
-| Entity fabrication | 10 | 90.0% (9/10) | 100.0% (10/10) |
-| Causal overreach | 25 | 96.0% (24/25) | 100.0% (25/25) |
-| **Overall** | **46** | **95.7% (44/46)** | **100.0% (46/46)** |
+| Category              |    N   | Method A (Self-Consistency) | Method B (Source-Grounded NLI) |
+| :-------------------- | :----: | :-------------------------: | :----------------------------: |
+| Numerical fabrication |   11   |        100.0% (11/11)       |         100.0% (11/11)         |
+| Entity fabrication    |   10   |         90.0% (9/10)        |         100.0% (10/10)         |
+| Causal overreach      |   25   |        96.0% (24/25)        |         100.0% (25/25)         |
+| **Overall**           | **46** |      **95.7% (44/46)**      |       **100.0% (46/46)**       |
 
-### False positive rate on the 86 supported controls
+### False Positive Rate on the 86 Supported Controls
 
-| Method | False Positives | FPR |
-|---|:---:|:---:|
-| Method A (Self-Consistency) | 5 / 86 | 5.8% |
-| Method B (Source-Grounded NLI) | 4 / 86 | 4.7% |
+| Method                         | False Positives |  FPR |
+| :----------------------------- | :-------------: | :--: |
+| Method A (Self-Consistency)    |      5 / 86     | 5.8% |
+| Method B (Source-Grounded NLI) |      4 / 86     | 4.7% |
 
-### Cross-tabulation (unsupported claims only)
+### Cross-Tabulation (Unsupported Claims Only)
 
-| | Method B Caught | Method B Missed |
-|---|:---:|:---:|
-| **Method A Caught** | 44 | 0 |
-| **Method A Missed** | 2 | 0 |
+|                     | Method B Caught | Method B Missed |
+| :------------------ | :-------------: | :-------------: |
+| **Method A Caught** |        44       |        0        |
+| **Method A Missed** |        2        |        0        |
 
-**Takeaway:** Method B strictly dominates on recall (it never misses what Method A misses, and misses nothing itself), because it has direct access to the reference text at inference time. Method A, operating purely on black-box output consistency with no access to the source document, still recovers ~96% of injected claims — but leaks specifically on entity attribution and causal-hyperbole cases where an equivalence checker mistakes shared rhetorical framing for factual corroboration.
+### Takeaway
+
+**Method B strictly dominates on recall:** it catches 100% of injected claims and misses nothing that Method A catches because it evaluates each claim directly against the source text at inference time.
+
+**Method A**, operating purely as a black-box consistency check without source-document access, still achieves **95.7% recall**. However, it exhibits blind spots on entity attribution and causal overreach, where an equivalence verifier can mistake shared rhetorical framing for factual corroboration.
 
 ---
 
 ## 2. Repository Architecture
 
-```
+```text
 .
-├── claims_dataset.py           # Defines the 132-claim adversarial benchmark (13 source docs)
-├── method_a_self_consistency.py# Method A: N=5 regeneration + equivalence-agreement scoring
-├── method_b_entailment.py      # Method B: single-pass zero-shot NLI against source text
-├── evaluate_and_score.py       # Scores both methods against ground truth, builds confusion matrix
-├── check_missed_claims.py      # Prints qualitative detail on claims Method A missed
-├── research_report.md          # Narrative write-up of methodology, results, and error analysis
+├── .env.example                 # Template for environment variables (API keys)
+├── .gitignore                   # Ignores .env, .venv, caches, and IDE configs
+├── README.md                    # Project overview, benchmark methodology, and reproduction guide
+├── research_report.md           # Narrative write-up of methodology, results, and error analysis
+├── claims_dataset.py            # Defines the 132-claim adversarial benchmark (13 source docs)
+├── claims_dataset.json          # Benchmark dataset JSON (generated by claims_dataset.py)
+├── method_a_self_consistency.py # Method A: N=5 regeneration + equivalence-agreement scoring
+├── method_b_entailment.py       # Method B: single-pass zero-shot NLI against source text
+├── evaluate_and_score.py        # Scores both methods against ground truth and builds confusion matrix
+├── check_missed_claims.py       # Prints qualitative detail on claims Method A missed
 │
-├── claims_dataset.json         # Dataset dump (written only if claims_dataset.py is run directly)
-├── regenerations_cache.json    # Cached N=5 summaries per document (Method A intermediate output)
-├── method_a_results.json       # Per-claim Method A verdicts + agreement scores
-├── method_b_results.json       # Per-claim Method B verdicts + parsed justifications
-└── evaluation_summary.json     # Aggregated catch-rate / FPR / cross-tabulation, written by evaluate_and_score.py
+├── regenerations_cache.json     # Cached N=5 summaries per document (Method A intermediate output)
+├── method_a_results.json        # Per-claim Method A verdicts + agreement scores
+├── method_b_results.json        # Per-claim Method B verdicts + parsed justifications
+└── evaluation_summary.json      # Aggregated catch-rate / FPR / cross-tabulation metrics
 ```
 
-Script and filename mapping above reflects the code exactly as committed; no wrapper scripts, CLI flags, or additional entry points exist beyond what is listed.
+`.env`, `.venv/`, and `__pycache__/` are deliberately omitted from the committed repository contents via `.gitignore`.
+
+`claims_dataset.json` is generated directly by running:
+
+```bash
+python claims_dataset.py
+```
+
+The downstream evaluation scripts, `method_a_self_consistency.py` and `method_b_entailment.py`, read this serialized JSON directly from disk.
 
 ---
 
 ## 3. Methodology
 
-### 3.1 Adversarial dataset (`claims_dataset.py`)
+### 3.1 Adversarial Dataset — `claims_dataset.py`
 
-The benchmark is a hand-authored Python list (`dataset`, 132 entries) spanning **13 source documents** drawn from astronomy press releases, corporate earnings reports, public-policy/municipal orders, biomedical trial summaries, and hardware announcements. Each entry carries `claim_id`, `doc_id`, `source_text`, `claim_text`, `category`, and `is_unsupported`.
+The benchmark is a structured dataset containing **132 total claims** spanning **13 source documents** drawn from:
 
-Claims fall into five category labels, split into two evaluation groups:
+* Astronomy press releases
+* Corporate earnings reports
+* Municipal continuity orders
+* Clinical trial readouts
+* Semiconductor hardware announcements
 
-- **Unsupported injections (N=46)** — claims fabricated relative to the source:
-  - `numerical` (N=11): altered metrics, dates, percentages.
-  - `entity` (N=10): fabricated researchers, agencies, institutions.
-  - `causal` (N=25): unsupported causal links or guaranteed outcomes.
-- **Supported controls (N=86)** — claims grounded in or plausibly hedged against the source, spanning the `numerical`, `entity`, `causal`, `hedged_plausible`, and `supported_control` labels wherever `is_unsupported` is `False`.
+Each entry contains:
 
-Running `claims_dataset.py` directly (`if __name__ == "__main__"`) serializes the list to `claims_dataset.json` via `save_dataset()`. All other scripts import `dataset` directly from the module (`from claims_dataset import dataset`), so this dump is for inspection only and is not required for the pipeline to run.
+* `claim_id`
+* `doc_id`
+* `source_text`
+* `claim_text`
+* `category`
+* `is_unsupported`
 
-### 3.2 Method A — Self-Consistency (`method_a_self_consistency.py`)
+Claims are distributed across five categories:
 
-Purely black-box: never sees the source document at verification time.
+#### Unsupported Injections — N = 46
 
-1. For each of the 13 source documents, generate `N_REGENERATIONS = 5` alternative summaries at `temperature=0.7` (cached to `regenerations_cache.json` so reruns skip regeneration).
-2. For each of the 132 claims, run a `YES`/`NO` equivalence prompt against each of the 5 regenerations at `temperature=0.0`, asking whether that regeneration mentions or supports the claim.
-3. Compute `agreement_score = match_count / 5`.
-4. Flag the claim as caught (predicted unsupported) if `agreement_score <= AGREEMENT_THRESHOLD` (`0.40`, i.e. recurrence in ≤2/5 generations).
+* **`numerical` — N = 11:** Altered metrics, dates, percentages, and sample sizes.
+* **`entity` — N = 10:** Fabricated researchers, partner organizations, and instruments.
+* **`causal` — N = 25:** Unsupported causal extrapolations and premature efficacy claims.
 
-### 3.3 Method B — Source-Grounded NLI (`method_b_entailment.py`)
+#### Supported Controls — N = 86
 
-Single-pass, given the actual source text. For each claim, a zero-shot entailment prompt at `temperature=0.0` asks whether the source text directly and unambiguously supports the claim, instructing the model to treat exaggerated or causal overreach as unsupported absent explicit textual backing. The response is parsed with regex for a `VERDICT: YES|NO` line and a `JUSTIFICATION:` line (with a conservative fallback to "unsupported" if no clean verdict is parsed). `VERDICT: NO` → `method_b_caught = True`.
+Grounded factual claims and appropriately hedged statements where `is_unsupported` is `False`.
 
-### 3.4 Scoring (`evaluate_and_score.py`, `check_missed_claims.py`)
+Running `claims_dataset.py` exports the dataset to `claims_dataset.json` for consumption by the evaluation pipelines.
 
-`evaluate_and_score.py` joins `method_a_results.json` and `method_b_results.json` on `claim_id`, computes per-category recall, the overall false-positive rate on the 86 controls, and the 2×2 cross-tabulation of catch/miss between methods on the 46 unsupported claims, writing the aggregate to `evaluation_summary.json`. `check_missed_claims.py` reads that summary's `b_only` list (claims Method B caught and Method A missed) and prints each claim's text and agreement score for qualitative review.
+---
+
+### 3.2 Method A — Self-Consistency
+
+**Implementation:** `method_a_self_consistency.py`
+
+Method A is purely black-box and **does not access the source document at verification time**.
+
+#### Procedure
+
+1. For each of the 13 source documents, generate `N_REGENERATIONS = 5` alternative summaries at `temperature=0.7`.
+2. Cache the generated summaries to `regenerations_cache.json`.
+3. For each of the 132 claims, execute a binary equivalence prompt against each of the five regenerations at `temperature=0.0`.
+4. Determine whether each regeneration entails the claim.
+5. Compute the agreement score:
+
+$$
+\text{agreement\_score} =
+\frac{\text{number of matching regenerations}}{5}
+$$
+
+6. Flag a claim as unsupported ("caught") if:
+
+$$
+\text{agreement\_score} \leq 0.40
+$$
+
+This corresponds to the claim recurring in **2 or fewer of the 5 regenerations**.
+
+---
+
+### 3.3 Method B — Source-Grounded NLI
+
+**Implementation:** `method_b_entailment.py`
+
+Method B performs single-pass, zero-shot entailment checking with **direct access to the source text**.
+
+For each claim, a verification prompt at `temperature=0.0` asks whether the source text directly supports the assertion.
+
+The model returns:
+
+```text
+VERDICT: YES
+```
+
+or:
+
+```text
+VERDICT: NO
+```
+
+along with a justification.
+
+A verdict of `NO` marks the claim as **caught**.
+
+---
+
+### 3.4 Scoring
+
+**Implementations:**
+
+* `evaluate_and_score.py`
+* `check_missed_claims.py`
+
+`evaluate_and_score.py`:
+
+1. Loads `method_a_results.json`.
+2. Loads `method_b_results.json`.
+3. Joins both result sets on `claim_id`.
+4. Calculates category-level recall.
+5. Calculates false-positive rates on the 86 supported controls.
+6. Builds the 2 × 2 cross-tabulation matrix.
+7. Writes the aggregated results to `evaluation_summary.json`.
+
+`check_missed_claims.py` reads `evaluation_summary.json` to inspect the exact failure cases where Method A diverged from Method B.
 
 ---
 
 ## 4. Detailed Results & Failure Autopsy
 
-Method A missed exactly 2 of the 46 injected claims (both caught by Method B), yielding its 95.7% overall recall:
+Method A missed exactly **2 of the 46 injected claims**, both of which were caught by Method B. This gives Method A an overall recall of **95.7%**.
 
-**`doc11_c04` — Entity fabrication, agreement score 0.8 (4/5)**
-Claim attributes a specific legal opinion to a fabricated municipal attorney. All 5 regenerations converged on discussing the underlying municipal legal topic, and the equivalence checker treated topical overlap as support for the fabricated attribution — a case of pre-training priors smoothing over generic local-government role conventions rather than verifying the specific named actor.
+### `doc11_c04` — Entity Fabrication
 
-**`doc13_c06` — Causal overreach, agreement score 1.0 (5/5)**
-Claim asserts a discovery "would have been completely impossible with any other existing telescope." Every regeneration praised the relevant instrument's role in the discovery, and the checker interpreted that shared rhetorical enthusiasm as corroborating the absolute exclusivity claim — self-consistency cannot distinguish genuine factual entailment from stylistically-correlated hyperbole that recurs across independent generations for the same underlying reason.
+**Agreement Score:** `0.8` / `80%`
 
-Both failures share a mechanism: self-consistency measures whether independent generations *agree*, not whether they are *individually grounded* in the source. When a fabrication rides on a topic or rhetorical framing the base model reliably reproduces regardless of source grounding, agreement stays high and the claim slips through. Source-grounded NLI (Method B) is immune to this failure mode by construction, at the cost of requiring the reference text at inference time — Method A requires no such access, at ~5x+ the inference cost (5 summary generations + 5 equivalence checks per claim, vs. one entailment call per claim for Method B).
+**Injected Claim:**
+
+> City Attorney Jennifer Martinez advised the council that state law allows local age restrictions on e-bike operators.
+
+**Source Truth:**
+
+The source states that councilmembers asked municipal staff to pursue legislative options. No city attorney was named or consulted.
+
+**Failure Mechanism:**
+
+All regenerations focused heavily on the municipal regulatory debate. The equivalence verifier exhibited semantic drift, accepting a plausible municipal official as contextually entailed because the claim was strongly aligned with the surrounding topic.
+
+---
+
+### `doc13_c06` — Causal Overreach
+
+**Agreement Score:** `1.0` / `100%`
+
+**Injected Claim:**
+
+> Webb's coronagraph technology enabled this discovery, which would have been completely impossible with any other existing telescope.
+
+**Source Truth:**
+
+The source describes the coronagraph's operation without asserting exclusive impossibility across all other observatories.
+
+**Failure Mechanism:**
+
+Every regeneration praised the coronagraph's role. The equivalence verifier conflated unanimous praise across independent summaries with corroboration of the absolute superlative claim.
+
+---
+
+### What These Failures Reveal
+
+Both edge cases highlight the principal theoretical limitation of self-consistency:
+
+> **Self-consistency measures consensus, not factual grounding.**
+
+When an LLM reliably reproduces standard narrative schemas or rhetorical hyperbole, agreement can remain high even when the assertion lacks textual evidence.
 
 ---
 
 ## 5. Quickstart & Reproducibility
 
-`method_a_self_consistency.py` and `method_b_entailment.py` load their OpenRouter credential via `python-dotenv` (`load_dotenv()` + `os.getenv("OPENROUTER_API_KEY")`), reading it from a local `.env` file that is excluded from version control by `.gitignore`. No key is stored in source.
+### 5.1 Setup
+
+Create and activate a virtual environment:
 
 ```bash
-# 1. Activate the existing virtual environment
+python -m venv .venv
 source .venv/bin/activate
-
-# 2. Install the one additional dependency this env-var change introduced
-pip install python-dotenv
-
-# 3. Provide your own credential — copy the template and fill in your key
-cp .env.example .env
-# then edit .env and set OPENROUTER_API_KEY=<your-openrouter-key>
-
-# 4. Run the pipeline in order — each step reads/writes the JSON artifacts
-#    documented in the Repository Architecture section above.
-
-# (optional) materialize the dataset to disk for inspection
-python claims_dataset.py
-
-# Method A: generates regenerations_cache.json, then method_a_results.json
-python method_a_self_consistency.py
-
-# Method B: generates method_b_results.json
-python method_b_entailment.py
-
-# Score both methods against ground truth -> evaluation_summary.json
-python evaluate_and_score.py
-
-# Print qualitative detail on the 2 claims Method A missed
-python check_missed_claims.py
 ```
 
-`method_a_self_consistency.py` and `evaluate_and_score.py` check for their respective cached JSON files (`regenerations_cache.json`, `method_a_results.json`, `method_b_results.json`) before making any API calls — delete the relevant file to force a fresh run of that stage, or leave the existing cached files in place to re-score or re-inspect results with zero new API calls.
+Install the required dependencies:
 
-**Security note:** this repository previously had a live OpenRouter key hardcoded in `method_a_self_consistency.py` and `method_b_entailment.py`. That has been remediated — both scripts now read `OPENROUTER_API_KEY` from `.env` (gitignored; `.env.example` documents the expected variable with a placeholder value). The key that was previously hardcoded in source has already been exposed and should still be treated as compromised and rotated in the OpenRouter dashboard, independent of this code fix.
+```bash
+pip install openai tqdm python-dotenv
+```
+
+### 5.2 Configure Credentials
+
+Both `method_a_self_consistency.py` and `method_b_entailment.py` read `OPENROUTER_API_KEY` from a local `.env` file using `python-dotenv`.
+
+Copy the example environment file:
+
+```bash
+cp .env.example .env
+```
+
+Then edit `.env` and add your OpenRouter API key:
+
+```env
+OPENROUTER_API_KEY=your_key_here
+```
+
+**Do not commit `.env` to Git.**
 
 ---
 
-## 6. Threats to Validity
+## 6. Execution Pipeline
 
-- **Single-model dependency.** Both generation (Method A's regenerations) and both verification steps (Method A's equivalence checks, Method B's entailment checks) run on the same model, `gpt-4o-mini`. Results may not transfer to verification with a stronger or differently-trained judge model, or to detecting fabrications produced by a different generator.
-- **Dataset scale and construction.** 132 claims across 13 documents were hand-authored by a single author with no multi-annotator agreement measurement (e.g., Cohen's Kappa) on the unsupported/supported labels themselves.
-- **Threshold sensitivity.** Method A's catch decision depends on a fixed `AGREEMENT_THRESHOLD = 0.40` (≤2/5 regenerations) and `N_REGENERATIONS = 5`, chosen a priori rather than tuned. The reported 95.7% recall / 5.8% FPR trade-off is a single point on what is otherwise a tunable precision–recall curve; different N or threshold values would shift both catch rate and false-positive rate.
-# Hallucination_Detection_Benchmark
+Run the pipeline sequentially.
+
+### Step 1 — Generate the Dataset
+
+```bash
+python claims_dataset.py
+```
+
+Generates:
+
+```text
+claims_dataset.json
+```
+
+### Step 2 — Run Method A
+
+```bash
+python method_a_self_consistency.py
+```
+
+Generates:
+
+```text
+regenerations_cache.json
+method_a_results.json
+```
+
+### Step 3 — Run Method B
+
+```bash
+python method_b_entailment.py
+```
+
+Generates:
+
+```text
+method_b_results.json
+```
+
+### Step 4 — Evaluate Both Methods
+
+```bash
+python evaluate_and_score.py
+```
+
+Generates:
+
+```text
+evaluation_summary.json
+```
+
+### Step 5 — Inspect Method A False Negatives
+
+```bash
+python check_missed_claims.py
+```
+
+This prints qualitative details for claims that Method A missed but Method B caught.
+
+---
+
+### Caching Note
+
+`method_a_self_consistency.py` caches generated summaries in:
+
+```text
+regenerations_cache.json
+```
+
+This prevents unnecessary regeneration of the five summaries for each source document.
+
+Delete the cache if you want to regenerate all summaries from scratch:
+
+```bash
+rm regenerations_cache.json
+```
+
+Then rerun:
+
+```bash
+python method_a_self_consistency.py
+```
+
+---
+
+## 7. Threats to Validity
+
+### Single-Model Evaluator
+
+Both summary generation and verification prompts rely on `openai/gpt-4o-mini`.
+
+Cross-model verification dynamics, such as evaluating with Claude, Llama, or another independent model, were not measured.
+
+### Dataset Scale
+
+The benchmark contains **132 claims across 13 documents** and was constructed by a single author.
+
+No multi-annotator inter-rater reliability analysis, such as Cohen's Kappa, was performed.
+
+### Threshold Parameterization
+
+Method A's decision rule relies on an a priori fixed threshold:
+
+$$
+\text{agreement\_score} \leq 0.40
+$$
+
+across `N = 5` regenerations.
+
+Changing the number of regenerations or shifting the cutoff could alter the trade-off between recall and false-positive rate.
+
+### Model and Prompt Dependence
+
+The reported results are specific to the selected model, prompts, generation temperature, verification procedure, and benchmark construction. They should therefore be interpreted as an empirical benchmark result rather than a universal ranking of hallucination-detection methods.
+
+---
+
+## 8. Summary
+
+This benchmark compares two fundamentally different approaches to hallucination detection:
+
+| Property                          | Method A                             | Method B                          |
+| :-------------------------------- | :----------------------------------- | :-------------------------------- |
+| Approach                          | Self-consistency                     | Source-grounded NLI               |
+| Source access during verification | ❌ No                                 | ✅ Yes                             |
+| Verification passes               | 5 regenerations + equivalence checks | 1 source-grounded check           |
+| Unsupported claims caught         | 44 / 46                              | 46 / 46                           |
+| Recall                            | **95.7%**                            | **100.0%**                        |
+| False positives                   | 5 / 86                               | 4 / 86                            |
+| FPR                               | **5.8%**                             | **4.7%**                          |
+| Main limitation                   | Consensus ≠ grounding                | Dependent on source/model quality |
+
+The results suggest that **source-grounded verification provides stronger factual guarantees when the source document is available**, while self-consistency can still serve as a useful black-box signal when source access is unavailable.
+
+The two Method A failures demonstrate an important distinction: **an LLM can consistently agree with itself about a claim that is nevertheless unsupported by the original source.**
