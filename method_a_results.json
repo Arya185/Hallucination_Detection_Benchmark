@@ -1,0 +1,2114 @@
+[
+  {
+    "claim_id": "doc1_c01",
+    "doc_id": "doc1",
+    "category": "numerical",
+    "claim_text": "Researchers identified 84 hypersoft X-ray sources across six galaxies.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc1_c02",
+    "doc_id": "doc1",
+    "category": "numerical",
+    "claim_text": "The observations covered 12 galaxies in total.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc1_c03",
+    "doc_id": "doc1",
+    "category": "entity",
+    "claim_text": "The discovery was made using NASA's Chandra X-ray Observatory.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc1_c04",
+    "doc_id": "doc1",
+    "category": "entity",
+    "claim_text": "The lead researcher was Mustafa Muhibullah of the University of Alabama.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc1_c05",
+    "doc_id": "doc1",
+    "category": "causal",
+    "claim_text": "The hypersoft sources have been proven to be Type Ia supernova progenitors.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc1_c06",
+    "doc_id": "doc1",
+    "category": "causal",
+    "claim_text": "Their ultraviolet radiation may contribute to ionizing interstellar gas in some galaxies.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc1_c07",
+    "doc_id": "doc1",
+    "category": "hedged_plausible",
+    "claim_text": "The sources could involve compact objects such as black holes, neutron stars, or white dwarfs.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc1_c08",
+    "doc_id": "doc1",
+    "category": "hedged_plausible",
+    "claim_text": "Some of these systems might eventually help researchers understand Type Ia supernova progenitors.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc1_c09",
+    "doc_id": "doc1",
+    "category": "supported_control",
+    "claim_text": "M31 and M101 were among the six galaxies searched.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 0.8,
+    "matches": [
+      true,
+      true,
+      false,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc1_c10",
+    "doc_id": "doc1",
+    "category": "supported_control",
+    "claim_text": "The researchers used publicly available Chandra archival data.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc2_c01",
+    "doc_id": "doc2",
+    "category": "numerical",
+    "claim_text": "HPE reported $12.2 billion in Q3 FY2026 revenue.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc2_c02",
+    "doc_id": "doc2",
+    "category": "numerical",
+    "claim_text": "HPE's Networking revenue increased by 74.9% year over year.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc2_c03",
+    "doc_id": "doc2",
+    "category": "entity",
+    "claim_text": "Antonio Neri was HPE's president and CEO.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc2_c04",
+    "doc_id": "doc2",
+    "category": "entity",
+    "claim_text": "Marie Myers was HPE's executive vice president and CFO.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc2_c05",
+    "doc_id": "doc2",
+    "category": "causal",
+    "claim_text": "HPE's 34% revenue growth was entirely caused by AI demand.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc2_c06",
+    "doc_id": "doc2",
+    "category": "causal",
+    "claim_text": "The increase in Data Center Networking revenue caused HPE's overall operating profit to rise 464%.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc2_c07",
+    "doc_id": "doc2",
+    "category": "hedged_plausible",
+    "claim_text": "AI may become a significant multi-year growth driver for HPE.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc2_c08",
+    "doc_id": "doc2",
+    "category": "hedged_plausible",
+    "claim_text": "HPE's record order backlog could support stronger future revenue.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 0.2,
+    "matches": [
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc2_c09",
+    "doc_id": "doc2",
+    "category": "supported_control",
+    "claim_text": "HPE forecast Q4 FY2026 revenue of $13.9–$14.8 billion.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc2_c10",
+    "doc_id": "doc2",
+    "category": "supported_control",
+    "claim_text": "HPE declared a quarterly dividend of $0.1425 per share.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc3_c01",
+    "doc_id": "doc3",
+    "category": "numerical",
+    "claim_text": "Executive Order No. 22 was issued on September 4, 2026.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc3_c02",
+    "doc_id": "doc3",
+    "category": "numerical",
+    "claim_text": "Agencies are required to conduct at least one COOP exercise annually.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc3_c03",
+    "doc_id": "doc3",
+    "category": "entity",
+    "claim_text": "NYC Emergency Management (NYCEM) is designated as the lead coordinating agency.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc3_c04",
+    "doc_id": "doc3",
+    "category": "entity",
+    "claim_text": "Office of Technology and Innovation (OTI) is part of the CMAT's core representation.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 0.6,
+    "matches": [
+      true,
+      false,
+      true,
+      true,
+      false
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc3_c05",
+    "doc_id": "doc3",
+    "category": "causal",
+    "claim_text": "The order guarantees uninterrupted delivery of every city service during emergencies.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc3_c06",
+    "doc_id": "doc3",
+    "category": "causal",
+    "claim_text": "Annual COOP exercises will prevent major disruptions to essential services.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc3_c07",
+    "doc_id": "doc3",
+    "category": "hedged_plausible",
+    "claim_text": "The framework could improve citywide coordination during disruptions.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc3_c08",
+    "doc_id": "doc3",
+    "category": "hedged_plausible",
+    "claim_text": "Regular exercises may reveal weaknesses in agency continuity plans.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc3_c09",
+    "doc_id": "doc3",
+    "category": "supported_control",
+    "claim_text": "Executive Order No. 107 from 2007 was revoked.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 0.8,
+    "matches": [
+      true,
+      false,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc3_c10",
+    "doc_id": "doc3",
+    "category": "supported_control",
+    "claim_text": "The CMAT is chaired by the Deputy Mayor for Operations or their designee.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc3_c11",
+    "doc_id": "doc3",
+    "category": "numerical",
+    "claim_text": "CMAT must meet at least quarterly.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc3_c12",
+    "doc_id": "doc3",
+    "category": "supported_control",
+    "claim_text": "The new order took effect immediately.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 0.6,
+    "matches": [
+      true,
+      false,
+      true,
+      true,
+      false
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc4_c01",
+    "doc_id": "doc4",
+    "category": "numerical",
+    "claim_text": "PrevenTRON plans to recruit approximately 1,600 participants.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc4_c02",
+    "doc_id": "doc4",
+    "category": "numerical",
+    "claim_text": "Eligible participants are 55–80 years old.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc4_c03",
+    "doc_id": "doc4",
+    "category": "entity",
+    "claim_text": "Trontinemab is the investigational drug being studied.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc4_c04",
+    "doc_id": "doc4",
+    "category": "entity",
+    "claim_text": "Roche sponsors the PrevenTRON study.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc4_c05",
+    "doc_id": "doc4",
+    "category": "causal",
+    "claim_text": "Trontinemab has been proven to prevent Alzheimer's disease before symptoms appear.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc4_c06",
+    "doc_id": "doc4",
+    "category": "causal",
+    "claim_text": "Removing amyloid plaques necessarily prevents the development of Alzheimer's disease.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc4_c07",
+    "doc_id": "doc4",
+    "category": "hedged_plausible",
+    "claim_text": "Trontinemab could potentially delay Alzheimer's onset if the trial demonstrates efficacy.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc4_c08",
+    "doc_id": "doc4",
+    "category": "hedged_plausible",
+    "claim_text": "Earlier intervention may offer a useful strategy for Alzheimer's prevention research.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc4_c09",
+    "doc_id": "doc4",
+    "category": "supported_control",
+    "claim_text": "PrevenTRON is described as a Phase III research study.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc4_c10",
+    "doc_id": "doc4",
+    "category": "supported_control",
+    "claim_text": "The study targets people without current Alzheimer's symptoms or memory problems.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc5_c01",
+    "doc_id": "doc5",
+    "category": "numerical",
+    "claim_text": "The study analyzed spectroscopy from more than 2.5 million galaxies.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc5_c02",
+    "doc_id": "doc5",
+    "category": "numerical",
+    "claim_text": "It examined approximately 4.5 billion years of cosmic history.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc5_c03",
+    "doc_id": "doc5",
+    "category": "entity",
+    "claim_text": "The study was published in Nature Astronomy.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc5_c04",
+    "doc_id": "doc5",
+    "category": "entity",
+    "claim_text": "The research concerns the evolution of atomic hydrogen in galaxies.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc5_c05",
+    "doc_id": "doc5",
+    "category": "causal",
+    "claim_text": "The study proves that declining star formation is caused exclusively by inefficient hydrogen conversion.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc5_c06",
+    "doc_id": "doc5",
+    "category": "causal",
+    "claim_text": "Retaining atomic hydrogen directly prevents galaxies from forming new stars.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc5_c07",
+    "doc_id": "doc5",
+    "category": "hedged_plausible",
+    "claim_text": "Inefficient conversion of atomic gas into star-forming material may help explain declining star formation.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc5_c08",
+    "doc_id": "doc5",
+    "category": "hedged_plausible",
+    "claim_text": "Feedback processes could contribute to the observed decline in star formation.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc5_c09",
+    "doc_id": "doc5",
+    "category": "supported_control",
+    "claim_text": "The study reports that the Universe retained much of its atomic hydrogen over the period examined.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc5_c10",
+    "doc_id": "doc5",
+    "category": "supported_control",
+    "claim_text": "The study examines a population-level trend rather than one individual galaxy.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc6_c01",
+    "doc_id": "doc6",
+    "category": "numerical",
+    "claim_text": "HCLTech invested ₹185 crore in the new laboratory.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc6_c02",
+    "doc_id": "doc6",
+    "category": "numerical",
+    "claim_text": "The laboratory covers 40,000 square feet.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc6_c03",
+    "doc_id": "doc6",
+    "category": "entity",
+    "claim_text": "The facility is located in Bengaluru.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc6_c04",
+    "doc_id": "doc6",
+    "category": "entity",
+    "claim_text": "HCLTech launched the facility as its Advanced Semiconductor Lab.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc6_c05",
+    "doc_id": "doc6",
+    "category": "causal",
+    "claim_text": "The laboratory will make India the world's largest semiconductor manufacturing country.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc6_c06",
+    "doc_id": "doc6",
+    "category": "causal",
+    "claim_text": "The ₹185 crore investment will eliminate India's semiconductor testing shortage.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc6_c07",
+    "doc_id": "doc6",
+    "category": "hedged_plausible",
+    "claim_text": "The laboratory could strengthen HCLTech's semiconductor engineering capabilities.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc6_c08",
+    "doc_id": "doc6",
+    "category": "hedged_plausible",
+    "claim_text": "The facility may help shorten development and testing cycles for some customers.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc6_c09",
+    "doc_id": "doc6",
+    "category": "supported_control",
+    "claim_text": "The facility includes Class 10K and Class 1K cleanrooms.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc6_c10",
+    "doc_id": "doc6",
+    "category": "supported_control",
+    "claim_text": "Its stated capabilities include post-silicon engineering, advanced testing and failure analysis.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc7_c01",
+    "doc_id": "doc7",
+    "category": "numerical",
+    "claim_text": "The CERVINO trial included 393 patients at the data cutoff.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc7_c02",
+    "doc_id": "doc7",
+    "category": "numerical",
+    "claim_text": "The reported objective response rate was 74%.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc7_c03",
+    "doc_id": "doc7",
+    "category": "entity",
+    "claim_text": "The investigational drug is etentamig.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc7_c04",
+    "doc_id": "doc7",
+    "category": "entity",
+    "claim_text": "The trial was conducted by AbbVie.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc7_c05",
+    "doc_id": "doc7",
+    "category": "causal",
+    "claim_text": "Etentamig has been proven to cure relapsed/refractory multiple myeloma.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc7_c06",
+    "doc_id": "doc7",
+    "category": "causal",
+    "claim_text": "The trial proves that etentamig increases overall survival.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc7_c07",
+    "doc_id": "doc7",
+    "category": "hedged_plausible",
+    "claim_text": "The results could support further development of etentamig.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc7_c08",
+    "doc_id": "doc7",
+    "category": "hedged_plausible",
+    "claim_text": "Etentamig may eventually provide another treatment option for heavily pretreated patients.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc7_c09",
+    "doc_id": "doc7",
+    "category": "supported_control",
+    "claim_text": "The trial compared etentamig with investigator's choice of standard available therapies.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 0.6,
+    "matches": [
+      true,
+      true,
+      false,
+      false,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc7_c10",
+    "doc_id": "doc7",
+    "category": "supported_control",
+    "claim_text": "The study met its reported dual primary endpoints of ORR and PFS.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc8_c01",
+    "doc_id": "doc8",
+    "category": "numerical",
+    "claim_text": "QUELL-DME plans to enroll approximately 180 participants.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc8_c02",
+    "doc_id": "doc8",
+    "category": "numerical",
+    "claim_text": "Its primary endpoint is measured at week 12.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc8_c03",
+    "doc_id": "doc8",
+    "category": "entity",
+    "claim_text": "The investigational drug is BGE-102.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc8_c04",
+    "doc_id": "doc8",
+    "category": "entity",
+    "claim_text": "The trial is being conducted by BioAge Labs.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc8_c05",
+    "doc_id": "doc8",
+    "category": "causal",
+    "claim_text": "BGE-102 has already been shown to restore vision in diabetic macular edema.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc8_c06",
+    "doc_id": "doc8",
+    "category": "causal",
+    "claim_text": "NLRP3 inhibition necessarily prevents retinal damage caused by diabetes.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc8_c07",
+    "doc_id": "doc8",
+    "category": "hedged_plausible",
+    "claim_text": "BGE-102 could potentially provide an oral alternative or complement to injectable treatment if efficacy is demonstrated.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc8_c08",
+    "doc_id": "doc8",
+    "category": "hedged_plausible",
+    "claim_text": "The trial may provide evidence useful for developing NLRP3-targeting treatments in other retinal diseases.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc8_c09",
+    "doc_id": "doc8",
+    "category": "supported_control",
+    "claim_text": "QUELL-DME is a randomized, controlled Phase 2 trial.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 0.4,
+    "matches": [
+      false,
+      true,
+      true,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc8_c10",
+    "doc_id": "doc8",
+    "category": "supported_control",
+    "claim_text": "The study evaluates BGE-102 both as monotherapy and in combination with anti-VEGF therapy.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc9_c01",
+    "doc_id": "doc9",
+    "category": "numerical",
+    "claim_text": "The asteroid 2025 MN45 completes one full rotation every 2.14 minutes.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc9_c02",
+    "doc_id": "doc9",
+    "category": "numerical",
+    "claim_text": "The study identified 23 super- and ultra-fast-rotating asteroids during the observation period.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc9_c03",
+    "doc_id": "doc9",
+    "category": "entity",
+    "claim_text": "The research was led by Michael Chen, an astronomer at NOIRLab and head of Rubin Observatory's Near-Earth Objects working group.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc9_c04",
+    "doc_id": "doc9",
+    "category": "entity",
+    "claim_text": "The findings were presented at the 248th meeting of the American Astronomical Society in Tucson, Arizona.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc9_c05",
+    "doc_id": "doc9",
+    "category": "causal",
+    "claim_text": "The discovery of 2025 MN45 proves that most main-belt asteroids are monolithic rock rather than rubble piles.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc9_c06",
+    "doc_id": "doc9",
+    "category": "causal",
+    "claim_text": "Rubin Observatory's rapid imaging capability directly caused the identification of all 19 fast rotators, which would have been impossible with any other telescope.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc9_c07",
+    "doc_id": "doc9",
+    "category": "hedged_plausible",
+    "claim_text": "The asteroid's rapid rotation suggests it may be a fragment from a past collision with another asteroid.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc9_c08",
+    "doc_id": "doc9",
+    "category": "hedged_plausible",
+    "claim_text": "Scientists expect to find more fast rotators once Rubin begins its 10-year Legacy Survey of Space and Time.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc9_c09",
+    "doc_id": "doc9",
+    "category": "supported_control",
+    "claim_text": "Asteroid 2025 MN45 has a diameter of 710 meters (0.4 miles).",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc9_c10",
+    "doc_id": "doc9",
+    "category": "supported_control",
+    "claim_text": "The fast-rotation limit to avoid fragmentation for main-belt asteroids is 2.2 hours.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc10_c01",
+    "doc_id": "doc10",
+    "category": "numerical",
+    "claim_text": "AMD's Q2 2026 revenue was $12.3 billion, representing a 57% year-over-year increase.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc10_c02",
+    "doc_id": "doc10",
+    "category": "numerical",
+    "claim_text": "Data center revenue grew 95% year-over-year to $6.2 billion in Q2 2026.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc10_c03",
+    "doc_id": "doc10",
+    "category": "entity",
+    "claim_text": "AMD's new rack-scale AI platform is called Prometheus, combining EPYC Genoa CPUs with MI350 series GPUs.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc10_c04",
+    "doc_id": "doc10",
+    "category": "entity",
+    "claim_text": "AMD announced a strategic partnership with Google DeepMind to deploy up to 1.5 GW of MI450 series GPUs.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc10_c05",
+    "doc_id": "doc10",
+    "category": "causal",
+    "claim_text": "The launch of Helios directly caused AMD's data center revenue to more than double year-over-year in Q2 2026.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc10_c06",
+    "doc_id": "doc10",
+    "category": "causal",
+    "claim_text": "AMD's partnership with Anthropic will make ROCm the dominant AI software platform by 2027.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc10_c07",
+    "doc_id": "doc10",
+    "category": "hedged_plausible",
+    "claim_text": "AMD expects server CPU revenue to grow more than 80% year-over-year in the second half of 2026.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc10_c08",
+    "doc_id": "doc10",
+    "category": "hedged_plausible",
+    "claim_text": "The company plans to launch a new rack-scale AI platform every year, with each generation delivering performance and efficiency gains.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc10_c09",
+    "doc_id": "doc10",
+    "category": "supported_control",
+    "claim_text": "AMD's gross margin for Q2 2026 expanded to 56%, up over 200 basis points year-over-year.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc10_c10",
+    "doc_id": "doc10",
+    "category": "supported_control",
+    "claim_text": "The company expects Q3 2026 revenue of approximately $13 billion ±$300 million.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc11_c01",
+    "doc_id": "doc11",
+    "category": "numerical",
+    "claim_text": "Police recorded 1,523 e-bike-related complaints and 94 documented collisions over recent years.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc11_c02",
+    "doc_id": "doc11",
+    "category": "numerical",
+    "claim_text": "The ordinance proposes a 7 mph speed limit on sidewalks when pedestrians are present and 12 mph otherwise.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc11_c03",
+    "doc_id": "doc11",
+    "category": "entity",
+    "claim_text": "Ordinance No. 638-26 was introduced on September 8, 2026, and is scheduled for final adoption at the September 22 City Council Meeting.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc11_c04",
+    "doc_id": "doc11",
+    "category": "entity",
+    "claim_text": "City Attorney Jennifer Martinez advised the council that state law allows local age restrictions on e-bike operators.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.8,
+    "matches": [
+      false,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc11_c05",
+    "doc_id": "doc11",
+    "category": "causal",
+    "claim_text": "The surge in e-bike complaints directly caused the 75 injuries and one fatality reported by police.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc11_c06",
+    "doc_id": "doc11",
+    "category": "causal",
+    "claim_text": "The voluntary diversion/education course will eliminate repeat juvenile e-bike violations within six months.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc11_c07",
+    "doc_id": "doc11",
+    "category": "hedged_plausible",
+    "claim_text": "The 1,369 complaint figure is described by police as \"a conservative minimum\" that could be higher.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc11_c08",
+    "doc_id": "doc11",
+    "category": "hedged_plausible",
+    "claim_text": "Councilmembers asked staff to pursue state legislative options regarding age limits on e-bike operators.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc11_c09",
+    "doc_id": "doc11",
+    "category": "supported_control",
+    "claim_text": "The City Council voted unanimously 5-0 to introduce the ordinance for further readings.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc11_c10",
+    "doc_id": "doc11",
+    "category": "supported_control",
+    "claim_text": "Police conducted 10 directed enforcement operations resulting in 146 traffic stops and 102 citations.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 0.8,
+    "matches": [
+      true,
+      true,
+      false,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc12_c01",
+    "doc_id": "doc12",
+    "category": "numerical",
+    "claim_text": "The Phase 2 study demonstrated 52% slowing of disease progression compared to placebo on the UMSARS Part I scale.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc12_c02",
+    "doc_id": "doc12",
+    "category": "numerical",
+    "claim_text": "Approximately 250 patients will be enrolled in the Phase 3 trial, randomly assigned in a 2:1 ratio to treatment or placebo.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc12_c03",
+    "doc_id": "doc12",
+    "category": "entity",
+    "claim_text": "The FDA agreed on the 12-item UMSARS Part II rating scale as the primary endpoint for the Phase 3 trial.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc12_c04",
+    "doc_id": "doc12",
+    "category": "entity",
+    "claim_text": "ATH434 received Breakthrough Therapy Designation from the FDA in addition to Fast Track and Orphan Drug Designation.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc12_c05",
+    "doc_id": "doc12",
+    "category": "causal",
+    "claim_text": "The 48% slowing of disease progression in Phase 2 proves that ATH434 will halt MSA progression entirely in Phase 3.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc12_c06",
+    "doc_id": "doc12",
+    "category": "causal",
+    "claim_text": "The FDA's agreement on the trial design guarantees regulatory approval of ATH434 for MSA by 2028.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc12_c07",
+    "doc_id": "doc12",
+    "category": "hedged_plausible",
+    "claim_text": "The Phase 3 trial will evaluate secondary endpoints including the Swallowing Disturbance Questionnaire and Orthostatic Hypotension Symptom Assessment.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 0.8,
+    "matches": [
+      true,
+      false,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc12_c08",
+    "doc_id": "doc12",
+    "category": "hedged_plausible",
+    "claim_text": "ATH434 is designed to redistribute excess iron and inhibit abnormal protein aggregation associated with neurodegeneration.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc12_c09",
+    "doc_id": "doc12",
+    "category": "supported_control",
+    "claim_text": "The Phase 3 trial will be a randomized, double-blind, placebo-controlled investigation with 12 months of treatment.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc12_c10",
+    "doc_id": "doc12",
+    "category": "supported_control",
+    "claim_text": "The Phase 2 study (ATH434-201) enrolled 77 adults randomly assigned to receive ATH434 50mg or 75mg twice daily or placebo.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc13_c01",
+    "doc_id": "doc13",
+    "category": "numerical",
+    "claim_text": "Beta Pictoris d has a mass approximately 12 times that of Jupiter and orbits at 7.2 AU from its host star.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc13_c02",
+    "doc_id": "doc13",
+    "category": "numerical",
+    "claim_text": "The Beta Pictoris system is located 75 light-years from Earth in the constellation Pictor.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc13_c03",
+    "doc_id": "doc13",
+    "category": "entity",
+    "claim_text": "The discovery was made using Webb's MIRI (Mid-Infrared Instrument) with its coronagraphic imaging mode.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc13_c04",
+    "doc_id": "doc13",
+    "category": "entity",
+    "claim_text": "The research team was led by Dr. Richard Anderson from the European Southern Observatory and published in Nature Astronomy.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc13_c05",
+    "doc_id": "doc13",
+    "category": "causal",
+    "claim_text": "The detection of carbon monoxide in the planet's atmosphere proves that Beta Pictoris d formed through gravitational collapse rather than core accretion.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 0.0,
+    "matches": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "method_a_caught": true
+  },
+  {
+    "claim_id": "doc13_c06",
+    "doc_id": "doc13",
+    "category": "causal",
+    "claim_text": "Webb's coronagraph technology enabled this discovery, which would have been completely impossible with any other existing telescope.",
+    "is_unsupported_ground_truth": true,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc13_c07",
+    "doc_id": "doc13",
+    "category": "hedged_plausible",
+    "claim_text": "The planet may have been previously missed because it was concealed by a bright disk of cosmic dust surrounding the star.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc13_c08",
+    "doc_id": "doc13",
+    "category": "hedged_plausible",
+    "claim_text": "Scientists expect that Beta Pictoris d's young age (approximately 20 million years) means it may still be contracting and cooling.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc13_c09",
+    "doc_id": "doc13",
+    "category": "supported_control",
+    "claim_text": "Beta Pictoris d orbits at approximately 8.5 AU, which is between the distances of Saturn and Uranus from our Sun.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 1.0,
+    "matches": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "method_a_caught": false
+  },
+  {
+    "claim_id": "doc13_c10",
+    "doc_id": "doc13",
+    "category": "supported_control",
+    "claim_text": "This is the closest directly imaged planet to its host star at a separation of 9 AU.",
+    "is_unsupported_ground_truth": false,
+    "agreement_score": 0.8,
+    "matches": [
+      true,
+      true,
+      true,
+      false,
+      true
+    ],
+    "method_a_caught": false
+  }
+]

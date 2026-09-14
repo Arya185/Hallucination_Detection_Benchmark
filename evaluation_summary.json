@@ -1,0 +1,84 @@
+{
+  "catch_rate_by_category": {
+    "numerical": {
+      "total": 11,
+      "method_a": 11,
+      "method_b": 11
+    },
+    "causal": {
+      "total": 25,
+      "method_a": 24,
+      "method_b": 25
+    },
+    "entity": {
+      "total": 10,
+      "method_a": 9,
+      "method_b": 10
+    }
+  },
+  "controls": {
+    "total": 86,
+    "false_positives_a": 5,
+    "false_positives_b": 4
+  },
+  "cross_tabulation": {
+    "both": 44,
+    "a_only": 0,
+    "b_only": 2,
+    "neither": 0,
+    "items": {
+      "both": [
+        "doc1_c02",
+        "doc1_c05",
+        "doc2_c05",
+        "doc2_c06",
+        "doc3_c05",
+        "doc3_c06",
+        "doc4_c05",
+        "doc4_c06",
+        "doc5_c05",
+        "doc5_c06",
+        "doc6_c05",
+        "doc6_c06",
+        "doc7_c05",
+        "doc7_c06",
+        "doc8_c05",
+        "doc8_c06",
+        "doc9_c01",
+        "doc9_c02",
+        "doc9_c03",
+        "doc9_c04",
+        "doc9_c05",
+        "doc9_c06",
+        "doc10_c01",
+        "doc10_c02",
+        "doc10_c03",
+        "doc10_c04",
+        "doc10_c05",
+        "doc10_c06",
+        "doc11_c01",
+        "doc11_c02",
+        "doc11_c03",
+        "doc11_c05",
+        "doc11_c06",
+        "doc12_c01",
+        "doc12_c02",
+        "doc12_c03",
+        "doc12_c04",
+        "doc12_c05",
+        "doc12_c06",
+        "doc13_c01",
+        "doc13_c02",
+        "doc13_c03",
+        "doc13_c04",
+        "doc13_c05"
+      ],
+      "a_only": [],
+      "b_only": [
+        "doc11_c04",
+        "doc13_c06"
+      ],
+      "neither": []
+    }
+  }
+}

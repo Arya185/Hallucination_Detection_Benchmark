@@ -1,0 +1,1322 @@
+[
+  {
+    "claim_id": "doc1_c01",
+    "doc_id": "doc1",
+    "category": "numerical",
+    "claim_text": "Researchers identified 84 hypersoft X-ray sources across six galaxies.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that the researchers identified 84 hypersoft X-ray sources across six galaxies, directly supporting the claim.",
+    "justification": "The source text explicitly states that the researchers identified 84 hypersoft X-ray sources across six galaxies, directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc1_c02",
+    "doc_id": "doc1",
+    "category": "numerical",
+    "claim_text": "The observations covered 12 galaxies in total.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that the researchers identified 84 hypersoft X-ray sources in six galaxies, not 12 galaxies. Therefore, the claim is not supported by the source.",
+    "justification": "The source text states that the researchers identified 84 hypersoft X-ray sources in six galaxies, not 12 galaxies. Therefore, the claim is not supported by the source.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc1_c03",
+    "doc_id": "doc1",
+    "category": "entity",
+    "claim_text": "The discovery was made using NASA's Chandra X-ray Observatory.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that the discovery of hypersoft X-ray sources was reported by NASA’s Chandra X-ray Observatory, directly supporting the claim.",
+    "justification": "The source text explicitly states that the discovery of hypersoft X-ray sources was reported by NASA’s Chandra X-ray Observatory, directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc1_c04",
+    "doc_id": "doc1",
+    "category": "entity",
+    "claim_text": "The lead researcher was Mustafa Muhibullah of the University of Alabama.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text does not mention the lead researcher or any specific individuals involved in the discovery, including Mustafa Muhibullah. Therefore, the claim is not directly supported by the text.",
+    "justification": "The source text does not mention the lead researcher or any specific individuals involved in the discovery, including Mustafa Muhibullah. Therefore, the claim is not directly supported by the text.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc1_c05",
+    "doc_id": "doc1",
+    "category": "causal",
+    "claim_text": "The hypersoft sources have been proven to be Type Ia supernova progenitors.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that researchers are interested in whether some hypersoft X-ray sources could be related to the progenitors of Type Ia supernovae, but it does not provide any evidence or confirmation that they have been proven to be such progenitors.",
+    "justification": "The source text states that researchers are interested in whether some hypersoft X-ray sources could be related to the progenitors of Type Ia supernovae, but it does not provide any evidence or confirmation that they have been proven to be such progenitors.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc1_c06",
+    "doc_id": "doc1",
+    "category": "causal",
+    "claim_text": "Their ultraviolet radiation may contribute to ionizing interstellar gas in some galaxies.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text states that the hypersoft X-ray sources \"may also contribute ultraviolet radiation capable of stripping electrons from gas between stars in some galaxies,\" which directly supports the claim regarding their potential contribution to ionizing interstellar gas.",
+    "justification": "The source text states that the hypersoft X-ray sources \"may also contribute ultraviolet radiation capable of stripping electrons from gas between stars in some galaxies,\" which directly supports the claim regarding their potential contribution to ionizing interstellar gas.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc1_c07",
+    "doc_id": "doc1",
+    "category": "hedged_plausible",
+    "claim_text": "The sources could involve compact objects such as black holes, neutron stars, or white dwarfs.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that researchers suggest the hypersoft X-ray sources could involve compact objects such as black holes, neutron stars, or white dwarfs, directly supporting the claim.",
+    "justification": "The source text explicitly states that researchers suggest the hypersoft X-ray sources could involve compact objects such as black holes, neutron stars, or white dwarfs, directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc1_c08",
+    "doc_id": "doc1",
+    "category": "hedged_plausible",
+    "claim_text": "Some of these systems might eventually help researchers understand Type Ia supernova progenitors.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text states that researchers are interested in whether some of the newly discovered hypersoft X-ray sources could be related to the progenitors of Type Ia supernovae, indicating a potential link that could help researchers understand these progenitors.",
+    "justification": "The source text states that researchers are interested in whether some of the newly discovered hypersoft X-ray sources could be related to the progenitors of Type Ia supernovae, indicating a potential link that could help researchers understand these progenitors.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc1_c09",
+    "doc_id": "doc1",
+    "category": "supported_control",
+    "claim_text": "M31 and M101 were among the six galaxies searched.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that two of the galaxies identified as containing hypersoft X-ray sources are M31 and M101, and that the researchers searched archival observations covering six galaxies.",
+    "justification": "The source text explicitly states that two of the galaxies identified as containing hypersoft X-ray sources are M31 and M101, and that the researchers searched archival observations covering six galaxies.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc1_c10",
+    "doc_id": "doc1",
+    "category": "supported_control",
+    "claim_text": "The researchers used publicly available Chandra archival data.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that the team searched \"publicly available Chandra archival observations\" to identify the hypersoft X-ray sources, directly supporting the claim.",
+    "justification": "The source text explicitly states that the team searched \"publicly available Chandra archival observations\" to identify the hypersoft X-ray sources, directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc2_c01",
+    "doc_id": "doc2",
+    "category": "numerical",
+    "claim_text": "HPE reported $12.2 billion in Q3 FY2026 revenue.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that HPE reported $12.2 billion in revenue for Q3 FY2026, directly supporting the claim.",
+    "justification": "The source text explicitly states that HPE reported $12.2 billion in revenue for Q3 FY2026, directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc2_c02",
+    "doc_id": "doc2",
+    "category": "numerical",
+    "claim_text": "HPE's Networking revenue increased by 74.9% year over year.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"Networking revenue was $2.9 billion, up 74.9%,\" directly supporting the claim.",
+    "justification": "The source text explicitly states that \"Networking revenue was $2.9 billion, up 74.9%,\" directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc2_c03",
+    "doc_id": "doc2",
+    "category": "entity",
+    "claim_text": "Antonio Neri was HPE's president and CEO.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text does not mention Antonio Neri or his position as HPE's president and CEO, therefore the claim is not directly supported by the provided information.",
+    "justification": "The source text does not mention Antonio Neri or his position as HPE's president and CEO, therefore the claim is not directly supported by the provided information.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc2_c04",
+    "doc_id": "doc2",
+    "category": "entity",
+    "claim_text": "Marie Myers was HPE's executive vice president and CFO.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text does not mention Marie Myers or her position as HPE's executive vice president and CFO, therefore the claim is not directly supported.",
+    "justification": "The source text does not mention Marie Myers or her position as HPE's executive vice president and CFO, therefore the claim is not directly supported.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc2_c05",
+    "doc_id": "doc2",
+    "category": "causal",
+    "claim_text": "HPE's 34% revenue growth was entirely caused by AI demand.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that HPE's revenue growth was 34% but does not attribute this growth entirely to AI demand; it mentions multiple business segments contributing to the results and describes AI as a multi-year growth opportunity without establishing a direct causal link.",
+    "justification": "The source text states that HPE's revenue growth was 34% but does not attribute this growth entirely to AI demand; it mentions multiple business segments contributing to the results and describes AI as a multi-year growth opportunity without establishing a direct causal link.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc2_c06",
+    "doc_id": "doc2",
+    "category": "causal",
+    "claim_text": "The increase in Data Center Networking revenue caused HPE's overall operating profit to rise 464%.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text reports that HPE's overall operating profit increased by 464% but does not establish that the increase in Data Center Networking revenue specifically caused this rise. The text indicates that multiple segments contributed to the results without attributing the profit increase to any single segment.",
+    "justification": "The source text reports that HPE's overall operating profit increased by 464% but does not establish that the increase in Data Center Networking revenue specifically caused this rise. The text indicates that multiple segments contributed to the results without attributing the profit increase to any single segment.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc2_c07",
+    "doc_id": "doc2",
+    "category": "hedged_plausible",
+    "claim_text": "AI may become a significant multi-year growth driver for HPE.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text states that HPE management described AI as a multi-year growth opportunity, which supports the claim that AI may become a significant multi-year growth driver for HPE.",
+    "justification": "The source text states that HPE management described AI as a multi-year growth opportunity, which supports the claim that AI may become a significant multi-year growth driver for HPE.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc2_c08",
+    "doc_id": "doc2",
+    "category": "hedged_plausible",
+    "claim_text": "HPE's record order backlog could support stronger future revenue.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source mentions that customer demand and order backlog were important contributors to HPE's results, but it does not explicitly state that the order backlog could support stronger future revenue. The claim implies a causal relationship that is not directly supported by the text.",
+    "justification": "The source mentions that customer demand and order backlog were important contributors to HPE's results, but it does not explicitly state that the order backlog could support stronger future revenue. The claim implies a causal relationship that is not directly supported by the text.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc2_c09",
+    "doc_id": "doc2",
+    "category": "supported_control",
+    "claim_text": "HPE forecast Q4 FY2026 revenue of $13.9–$14.8 billion.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that HPE raised its fourth-quarter expectations, forecasting revenue between $13.9 billion and $14.8 billion.",
+    "justification": "The source text explicitly states that HPE raised its fourth-quarter expectations, forecasting revenue between $13.9 billion and $14.8 billion.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc2_c10",
+    "doc_id": "doc2",
+    "category": "supported_control",
+    "claim_text": "HPE declared a quarterly dividend of $0.1425 per share.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"The company declared a regular cash dividend of $0.1425 per share,\" directly supporting the claim.",
+    "justification": "The source text explicitly states that \"The company declared a regular cash dividend of $0.1425 per share,\" directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc3_c01",
+    "doc_id": "doc3",
+    "category": "numerical",
+    "claim_text": "Executive Order No. 22 was issued on September 4, 2026.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"On September 4, 2026, New York City issued Executive Order No. 22,\" directly supporting the claim.",
+    "justification": "The source text explicitly states that \"On September 4, 2026, New York City issued Executive Order No. 22,\" directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc3_c02",
+    "doc_id": "doc3",
+    "category": "numerical",
+    "claim_text": "Agencies are required to conduct at least one COOP exercise annually.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"agencies must conduct at least one exercise each year to test their plans,\" which directly supports the claim.",
+    "justification": "The source text explicitly states that \"agencies must conduct at least one exercise each year to test their plans,\" which directly supports the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc3_c03",
+    "doc_id": "doc3",
+    "category": "entity",
+    "claim_text": "NYC Emergency Management (NYCEM) is designated as the lead coordinating agency.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"NYCEM is designated as the lead coordinating agency for the city's continuity and mission-assurance programs,\" directly supporting the claim.",
+    "justification": "The source text explicitly states that \"NYCEM is designated as the lead coordinating agency for the city's continuity and mission-assurance programs,\" directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc3_c04",
+    "doc_id": "doc3",
+    "category": "entity",
+    "claim_text": "Office of Technology and Innovation (OTI) is part of the CMAT's core representation.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that the Office of Technology and Innovation (OTI) is included in the core membership of the Continuity and Mission Assurance Team (CMAT).",
+    "justification": "The source text explicitly states that the Office of Technology and Innovation (OTI) is included in the core membership of the Continuity and Mission Assurance Team (CMAT).",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc3_c05",
+    "doc_id": "doc3",
+    "category": "causal",
+    "claim_text": "The order guarantees uninterrupted delivery of every city service during emergencies.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text explicitly states that the policy does not guarantee uninterrupted delivery of all city services during emergencies, but rather requires planning to maintain or rapidly resume essential services.",
+    "justification": "The source text explicitly states that the policy does not guarantee uninterrupted delivery of all city services during emergencies, but rather requires planning to maintain or rapidly resume essential services.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc3_c06",
+    "doc_id": "doc3",
+    "category": "causal",
+    "claim_text": "Annual COOP exercises will prevent major disruptions to essential services.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that agencies must conduct at least one exercise each year to test their Continuity of Operations (COOP) plans, but it does not claim that these exercises will prevent major disruptions to essential services. The text emphasizes planning to maintain or rapidly resume essential services rather than guaranteeing their uninterrupted continuation.",
+    "justification": "The source text states that agencies must conduct at least one exercise each year to test their Continuity of Operations (COOP) plans, but it does not claim that these exercises will prevent major disruptions to essential services. The text emphasizes planning to maintain or rapidly resume essential services rather than guaranteeing their uninterrupted continuation.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc3_c07",
+    "doc_id": "doc3",
+    "category": "hedged_plausible",
+    "claim_text": "The framework could improve citywide coordination during disruptions.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text describes the establishment of a framework for maintaining essential city services during emergencies, which includes the creation of the Continuity and Mission Assurance Team (CMAT) to enhance coordination among city agencies, thereby supporting the claim that the framework could improve citywide coordination during disruptions.",
+    "justification": "The source text describes the establishment of a framework for maintaining essential city services during emergencies, which includes the creation of the Continuity and Mission Assurance Team (CMAT) to enhance coordination among city agencies, thereby supporting the claim that the framework could improve citywide coordination during disruptions.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc3_c08",
+    "doc_id": "doc3",
+    "category": "hedged_plausible",
+    "claim_text": "Regular exercises may reveal weaknesses in agency continuity plans.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text states that agencies must conduct at least one exercise each year to test their plans, which implies that these exercises may reveal weaknesses in agency continuity plans.",
+    "justification": "The source text states that agencies must conduct at least one exercise each year to test their plans, which implies that these exercises may reveal weaknesses in agency continuity plans.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc3_c09",
+    "doc_id": "doc3",
+    "category": "supported_control",
+    "claim_text": "Executive Order No. 107 from 2007 was revoked.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"Executive Order No. 22 also revokes Executive Order No. 107, issued on October 2, 2007,\" directly supporting the claim.",
+    "justification": "The source text explicitly states that \"Executive Order No. 22 also revokes Executive Order No. 107, issued on October 2, 2007,\" directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc3_c10",
+    "doc_id": "doc3",
+    "category": "supported_control",
+    "claim_text": "The CMAT is chaired by the Deputy Mayor for Operations or their designee.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"The CMAT is chaired by the Deputy Mayor for Operations or the Deputy Mayor's designee,\" directly supporting the claim.",
+    "justification": "The source text explicitly states that \"The CMAT is chaired by the Deputy Mayor for Operations or the Deputy Mayor's designee,\" directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc3_c11",
+    "doc_id": "doc3",
+    "category": "numerical",
+    "claim_text": "CMAT must meet at least quarterly.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that the CMAT must meet regularly, at least quarterly, which directly supports the claim.",
+    "justification": "The source text explicitly states that the CMAT must meet regularly, at least quarterly, which directly supports the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc3_c12",
+    "doc_id": "doc3",
+    "category": "supported_control",
+    "claim_text": "The new order took effect immediately.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"The new order took effect immediately,\" directly supporting the claim.",
+    "justification": "The source text explicitly states that \"The new order took effect immediately,\" directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc4_c01",
+    "doc_id": "doc4",
+    "category": "numerical",
+    "claim_text": "PrevenTRON plans to recruit approximately 1,600 participants.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"The trial plans to recruit approximately 1,600 adults,\" directly supporting the claim.",
+    "justification": "The source text explicitly states that \"The trial plans to recruit approximately 1,600 adults,\" directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc4_c02",
+    "doc_id": "doc4",
+    "category": "numerical",
+    "claim_text": "Eligible participants are 55–80 years old.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that the trial plans to recruit approximately 1,600 adults aged 55–80, directly supporting the claim about the age range of eligible participants.",
+    "justification": "The source text explicitly states that the trial plans to recruit approximately 1,600 adults aged 55–80, directly supporting the claim about the age range of eligible participants.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc4_c03",
+    "doc_id": "doc4",
+    "category": "entity",
+    "claim_text": "Trontinemab is the investigational drug being studied.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"Trontinemab is being investigated\" in the context of the PrevenTRON clinical trial, confirming that it is the investigational drug being studied.",
+    "justification": "The source text explicitly states that \"Trontinemab is being investigated\" in the context of the PrevenTRON clinical trial, confirming that it is the investigational drug being studied.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc4_c04",
+    "doc_id": "doc4",
+    "category": "entity",
+    "claim_text": "Roche sponsors the PrevenTRON study.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"The trial is sponsored by Roche, the pharmaceutical company developing trontinemab,\" which directly supports the claim that Roche sponsors the PrevenTRON study.",
+    "justification": "The source text explicitly states that \"The trial is sponsored by Roche, the pharmaceutical company developing trontinemab,\" which directly supports the claim that Roche sponsors the PrevenTRON study.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc4_c05",
+    "doc_id": "doc4",
+    "category": "causal",
+    "claim_text": "Trontinemab has been proven to prevent Alzheimer's disease before symptoms appear.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that the trial is designed to determine whether trontinemab can delay or prevent Alzheimer's disease, but it explicitly notes that the existence of the trial does not establish that trontinemab can prevent Alzheimer's. Therefore, the claim is not supported.",
+    "justification": "The source text states that the trial is designed to determine whether trontinemab can delay or prevent Alzheimer's disease, but it explicitly notes that the existence of the trial does not establish that trontinemab can prevent Alzheimer's. Therefore, the claim is not supported.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc4_c06",
+    "doc_id": "doc4",
+    "category": "causal",
+    "claim_text": "Removing amyloid plaques necessarily prevents the development of Alzheimer's disease.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that trontinemab is being investigated for its ability to remove amyloid plaques associated with Alzheimer's disease, but it explicitly notes that the existence of the trial does not establish that trontinemab can prevent Alzheimer's. Therefore, the claim that removing amyloid plaques necessarily prevents the development of Alzheimer's disease is not supported.",
+    "justification": "The source text states that trontinemab is being investigated for its ability to remove amyloid plaques associated with Alzheimer's disease, but it explicitly notes that the existence of the trial does not establish that trontinemab can prevent Alzheimer's. Therefore, the claim that removing amyloid plaques necessarily prevents the development of Alzheimer's disease is not supported.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc4_c07",
+    "doc_id": "doc4",
+    "category": "hedged_plausible",
+    "claim_text": "Trontinemab could potentially delay Alzheimer's onset if the trial demonstrates efficacy.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text states that the PrevenTRON trial is designed to determine whether administering trontinemab before symptoms appear can delay or prevent the development of Alzheimer's disease, which supports the claim that trontinemab could potentially delay Alzheimer's onset if the trial demonstrates efficacy.",
+    "justification": "The source text states that the PrevenTRON trial is designed to determine whether administering trontinemab before symptoms appear can delay or prevent the development of Alzheimer's disease, which supports the claim that trontinemab could potentially delay Alzheimer's onset if the trial demonstrates efficacy.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc4_c08",
+    "doc_id": "doc4",
+    "category": "hedged_plausible",
+    "claim_text": "Earlier intervention may offer a useful strategy for Alzheimer's prevention research.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text states that the trial represents a shift toward investigating interventions at an earlier stage of disease risk, indicating that earlier intervention is being explored as a strategy for Alzheimer's prevention research.",
+    "justification": "The source text states that the trial represents a shift toward investigating interventions at an earlier stage of disease risk, indicating that earlier intervention is being explored as a strategy for Alzheimer's prevention research.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc4_c09",
+    "doc_id": "doc4",
+    "category": "supported_control",
+    "claim_text": "PrevenTRON is described as a Phase III research study.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"an international Phase III clinical trial called PrevenTRON is investigating whether an experimental drug called trontinemab can delay or prevent Alzheimer's disease,\" directly supporting the claim.",
+    "justification": "The source text explicitly states that \"an international Phase III clinical trial called PrevenTRON is investigating whether an experimental drug called trontinemab can delay or prevent Alzheimer's disease,\" directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc4_c10",
+    "doc_id": "doc4",
+    "category": "supported_control",
+    "claim_text": "The study targets people without current Alzheimer's symptoms or memory problems.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that the study is recruiting adults who currently have no memory or thinking problems, confirming that it targets individuals without current Alzheimer's symptoms.",
+    "justification": "The source text explicitly states that the study is recruiting adults who currently have no memory or thinking problems, confirming that it targets individuals without current Alzheimer's symptoms.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc5_c01",
+    "doc_id": "doc5",
+    "category": "numerical",
+    "claim_text": "The study analyzed spectroscopy from more than 2.5 million galaxies.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"Researchers used spectroscopy from more than 2.5 million galaxies,\" directly supporting the claim.",
+    "justification": "The source text explicitly states that \"Researchers used spectroscopy from more than 2.5 million galaxies,\" directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc5_c02",
+    "doc_id": "doc5",
+    "category": "numerical",
+    "claim_text": "It examined approximately 4.5 billion years of cosmic history.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that the study investigated the decline in star formation over approximately the last 4.5 billion years, directly supporting the claim.",
+    "justification": "The source text explicitly states that the study investigated the decline in star formation over approximately the last 4.5 billion years, directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc5_c03",
+    "doc_id": "doc5",
+    "category": "entity",
+    "claim_text": "The study was published in Nature Astronomy.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"A study published in Nature Astronomy in September 2026\" confirms the claim that the study was published in that journal.",
+    "justification": "The source text explicitly states that \"A study published in Nature Astronomy in September 2026\" confirms the claim that the study was published in that journal.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc5_c04",
+    "doc_id": "doc5",
+    "category": "entity",
+    "claim_text": "The research concerns the evolution of atomic hydrogen in galaxies.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that the study examines how the amount of atomic hydrogen in galaxies has changed over cosmic time, directly supporting the claim regarding the evolution of atomic hydrogen in galaxies.",
+    "justification": "The source text explicitly states that the study examines how the amount of atomic hydrogen in galaxies has changed over cosmic time, directly supporting the claim regarding the evolution of atomic hydrogen in galaxies.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc5_c05",
+    "doc_id": "doc5",
+    "category": "causal",
+    "claim_text": "The study proves that declining star formation is caused exclusively by inefficient hydrogen conversion.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that the study argues inefficient conversion of atomic hydrogen into stars is an important factor in declining star formation, but it does not claim that this is the exclusive cause, nor does it prove this point. Other processes also influence galaxy evolution, indicating a more complex relationship.",
+    "justification": "The source text states that the study argues inefficient conversion of atomic hydrogen into stars is an important factor in declining star formation, but it does not claim that this is the exclusive cause, nor does it prove this point. Other processes also influence galaxy evolution, indicating a more complex relationship.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc5_c06",
+    "doc_id": "doc5",
+    "category": "causal",
+    "claim_text": "Retaining atomic hydrogen directly prevents galaxies from forming new stars.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that the retention of atomic hydrogen does not mean that galaxies are efficiently converting it into stars, and it emphasizes that the decline in star formation is influenced by various factors, not solely by the retention of atomic hydrogen.",
+    "justification": "The source text states that the retention of atomic hydrogen does not mean that galaxies are efficiently converting it into stars, and it emphasizes that the decline in star formation is influenced by various factors, not solely by the retention of atomic hydrogen.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc5_c07",
+    "doc_id": "doc5",
+    "category": "hedged_plausible",
+    "claim_text": "Inefficient conversion of atomic gas into star-forming material may help explain declining star formation.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that the researchers argue inefficient conversion of atomic hydrogen into stars is an important factor in the decline of star formation, directly supporting the claim.",
+    "justification": "The source text explicitly states that the researchers argue inefficient conversion of atomic hydrogen into stars is an important factor in the decline of star formation, directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc5_c08",
+    "doc_id": "doc5",
+    "category": "hedged_plausible",
+    "claim_text": "Feedback processes could contribute to the observed decline in star formation.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that processes such as feedback from stars and active galactic nuclei can influence galaxy evolution, which supports the claim that feedback processes could contribute to the observed decline in star formation.",
+    "justification": "The source text explicitly states that processes such as feedback from stars and active galactic nuclei can influence galaxy evolution, which supports the claim that feedback processes could contribute to the observed decline in star formation.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc5_c09",
+    "doc_id": "doc5",
+    "category": "supported_control",
+    "claim_text": "The study reports that the Universe retained much of its atomic hydrogen over the period examined.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"the Universe appears to have retained most of its atomic hydrogen during this period,\" which directly supports the claim that the Universe retained much of its atomic hydrogen over the examined period.",
+    "justification": "The source text explicitly states that \"the Universe appears to have retained most of its atomic hydrogen during this period,\" which directly supports the claim that the Universe retained much of its atomic hydrogen over the examined period.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc5_c10",
+    "doc_id": "doc5",
+    "category": "supported_control",
+    "claim_text": "The study examines a population-level trend rather than one individual galaxy.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that the analysis relies on a very large spectroscopic galaxy sample, allowing researchers to investigate population-level trends rather than focusing on individual galaxies.",
+    "justification": "The source text explicitly states that the analysis relies on a very large spectroscopic galaxy sample, allowing researchers to investigate population-level trends rather than focusing on individual galaxies.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc6_c01",
+    "doc_id": "doc6",
+    "category": "numerical",
+    "claim_text": "HCLTech invested ₹185 crore in the new laboratory.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that HCLTech announced an investment of ₹185 crore in the facility, directly supporting the claim.",
+    "justification": "The source text explicitly states that HCLTech announced an investment of ₹185 crore in the facility, directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc6_c02",
+    "doc_id": "doc6",
+    "category": "numerical",
+    "claim_text": "The laboratory covers 40,000 square feet.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"The laboratory covers approximately 40,000 square feet,\" directly supporting the claim.",
+    "justification": "The source text explicitly states that \"The laboratory covers approximately 40,000 square feet,\" directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc6_c03",
+    "doc_id": "doc6",
+    "category": "entity",
+    "claim_text": "The facility is located in Bengaluru.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that HCLTech launched the Advanced Semiconductor Lab in Bengaluru, India, directly supporting the claim that the facility is located in Bengaluru.",
+    "justification": "The source text explicitly states that HCLTech launched the Advanced Semiconductor Lab in Bengaluru, India, directly supporting the claim that the facility is located in Bengaluru.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc6_c04",
+    "doc_id": "doc6",
+    "category": "entity",
+    "claim_text": "HCLTech launched the facility as its Advanced Semiconductor Lab.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that HCLTech announced the launch of an Advanced Semiconductor Lab, directly supporting the claim.",
+    "justification": "The source text explicitly states that HCLTech announced the launch of an Advanced Semiconductor Lab, directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc6_c05",
+    "doc_id": "doc6",
+    "category": "causal",
+    "claim_text": "The laboratory will make India the world's largest semiconductor manufacturing country.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text does not support the claim that the laboratory will make India the world's largest semiconductor manufacturing country; it only discusses the laboratory's focus on engineering, testing, and failure analysis, and mentions its potential role in India's semiconductor ecosystem without asserting any specific impact on global manufacturing status.",
+    "justification": "The source text does not support the claim that the laboratory will make India the world's largest semiconductor manufacturing country; it only discusses the laboratory's focus on engineering, testing, and failure analysis, and mentions its potential role in India's semiconductor ecosystem without asserting any specific impact on global manufacturing status.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc6_c06",
+    "doc_id": "doc6",
+    "category": "causal",
+    "claim_text": "The ₹185 crore investment will eliminate India's semiconductor testing shortage.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that the investment contributes to India's semiconductor ecosystem but does not claim that it will eliminate India's semiconductor testing shortage. The claim is an exaggerated interpretation of the information provided.",
+    "justification": "The source text states that the investment contributes to India's semiconductor ecosystem but does not claim that it will eliminate India's semiconductor testing shortage. The claim is an exaggerated interpretation of the information provided.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc6_c07",
+    "doc_id": "doc6",
+    "category": "hedged_plausible",
+    "claim_text": "The laboratory could strengthen HCLTech's semiconductor engineering capabilities.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text states that the Advanced Semiconductor Lab is intended to expand HCLTech's semiconductor engineering and testing capabilities, which directly supports the claim that the laboratory could strengthen these capabilities.",
+    "justification": "The source text states that the Advanced Semiconductor Lab is intended to expand HCLTech's semiconductor engineering and testing capabilities, which directly supports the claim that the laboratory could strengthen these capabilities.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc6_c08",
+    "doc_id": "doc6",
+    "category": "hedged_plausible",
+    "claim_text": "The facility may help shorten development and testing cycles for some customers.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text states that HCLTech intends to use the new facility to accelerate development and testing for customers, which supports the claim that the facility may help shorten development and testing cycles for some customers.",
+    "justification": "The source text states that HCLTech intends to use the new facility to accelerate development and testing for customers, which supports the claim that the facility may help shorten development and testing cycles for some customers.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc6_c09",
+    "doc_id": "doc6",
+    "category": "supported_control",
+    "claim_text": "The facility includes Class 10K and Class 1K cleanrooms.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that the laboratory includes 25,000 square feet of Class 10K and Class 1K cleanrooms, directly supporting the claim.",
+    "justification": "The source text explicitly states that the laboratory includes 25,000 square feet of Class 10K and Class 1K cleanrooms, directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc6_c10",
+    "doc_id": "doc6",
+    "category": "supported_control",
+    "claim_text": "Its stated capabilities include post-silicon engineering, advanced testing and failure analysis.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that the laboratory is designed to support post-silicon engineering, advanced semiconductor testing, and failure analysis, directly supporting the claim.",
+    "justification": "The source text explicitly states that the laboratory is designed to support post-silicon engineering, advanced semiconductor testing, and failure analysis, directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc7_c01",
+    "doc_id": "doc7",
+    "category": "numerical",
+    "claim_text": "The CERVINO trial included 393 patients at the data cutoff.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"the trial included 393 patients\" at the data cutoff, directly supporting the claim.",
+    "justification": "The source text explicitly states that \"the trial included 393 patients\" at the data cutoff, directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc7_c02",
+    "doc_id": "doc7",
+    "category": "numerical",
+    "claim_text": "The reported objective response rate was 74%.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that AbbVie reported an objective response rate of 74% for etentamig, directly supporting the claim.",
+    "justification": "The source text explicitly states that AbbVie reported an objective response rate of 74% for etentamig, directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc7_c03",
+    "doc_id": "doc7",
+    "category": "entity",
+    "claim_text": "The investigational drug is etentamig.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"the study evaluated etentamig, an investigational BCMA × CD3 bispecific T-cell engager,\" directly supporting the claim that the investigational drug is etentamig.",
+    "justification": "The source text explicitly states that \"the study evaluated etentamig, an investigational BCMA × CD3 bispecific T-cell engager,\" directly supporting the claim that the investigational drug is etentamig.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc7_c04",
+    "doc_id": "doc7",
+    "category": "entity",
+    "claim_text": "The trial was conducted by AbbVie.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text states that \"AbbVie announced positive topline results from the Phase 3 CERVINO trial,\" which implies that AbbVie was responsible for conducting the trial.",
+    "justification": "The source text states that \"AbbVie announced positive topline results from the Phase 3 CERVINO trial,\" which implies that AbbVie was responsible for conducting the trial.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc7_c05",
+    "doc_id": "doc7",
+    "category": "causal",
+    "claim_text": "Etentamig has been proven to cure relapsed/refractory multiple myeloma.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that etentamig showed positive results in a clinical trial for patients with relapsed or refractory multiple myeloma, but it does not claim that it has been proven to cure the disease. The drug remains investigational, and the announcement emphasizes that positive findings do not guarantee approval or effectiveness in real-world settings.",
+    "justification": "The source text states that etentamig showed positive results in a clinical trial for patients with relapsed or refractory multiple myeloma, but it does not claim that it has been proven to cure the disease. The drug remains investigational, and the announcement emphasizes that positive findings do not guarantee approval or effectiveness in real-world settings.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc7_c06",
+    "doc_id": "doc7",
+    "category": "causal",
+    "claim_text": "The trial proves that etentamig increases overall survival.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text does not mention overall survival as an endpoint of the trial, nor does it provide evidence that etentamig increases overall survival. It only discusses objective response rate and progression-free survival.",
+    "justification": "The source text does not mention overall survival as an endpoint of the trial, nor does it provide evidence that etentamig increases overall survival. It only discusses objective response rate and progression-free survival.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc7_c07",
+    "doc_id": "doc7",
+    "category": "hedged_plausible",
+    "claim_text": "The results could support further development of etentamig.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text indicates that AbbVie plans to discuss the results with global regulatory authorities to determine next steps, which implies that the positive results could support further development of etentamig.",
+    "justification": "The source text indicates that AbbVie plans to discuss the results with global regulatory authorities to determine next steps, which implies that the positive results could support further development of etentamig.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc7_c08",
+    "doc_id": "doc7",
+    "category": "hedged_plausible",
+    "claim_text": "Etentamig may eventually provide another treatment option for heavily pretreated patients.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text indicates that etentamig is being evaluated in patients with triple-class-exposed relapsed or refractory multiple myeloma, suggesting it may provide another treatment option for heavily pretreated patients, although it remains investigational and not yet approved.",
+    "justification": "The source text indicates that etentamig is being evaluated in patients with triple-class-exposed relapsed or refractory multiple myeloma, suggesting it may provide another treatment option for heavily pretreated patients, although it remains investigational and not yet approved.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc7_c09",
+    "doc_id": "doc7",
+    "category": "supported_control",
+    "claim_text": "The trial compared etentamig with investigator's choice of standard available therapies.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that the trial compared etentamig with investigator-selected standard available therapies, directly supporting the claim.",
+    "justification": "The source text explicitly states that the trial compared etentamig with investigator-selected standard available therapies, directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc7_c10",
+    "doc_id": "doc7",
+    "category": "supported_control",
+    "claim_text": "The study met its reported dual primary endpoints of ORR and PFS.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that the study met its dual primary endpoints of objective response rate (ORR) and progression-free survival (PFS), directly supporting the claim.",
+    "justification": "The source text explicitly states that the study met its dual primary endpoints of objective response rate (ORR) and progression-free survival (PFS), directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc8_c01",
+    "doc_id": "doc8",
+    "category": "numerical",
+    "claim_text": "QUELL-DME plans to enroll approximately 180 participants.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that the study plans to enroll approximately 180 participants, directly supporting the claim.",
+    "justification": "The source text explicitly states that the study plans to enroll approximately 180 participants, directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc8_c02",
+    "doc_id": "doc8",
+    "category": "numerical",
+    "claim_text": "Its primary endpoint is measured at week 12.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"Its primary endpoint is the change in best-corrected visual acuity at week 12,\" directly supporting the claim.",
+    "justification": "The source text explicitly states that \"Its primary endpoint is the change in best-corrected visual acuity at week 12,\" directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc8_c03",
+    "doc_id": "doc8",
+    "category": "entity",
+    "claim_text": "The investigational drug is BGE-102.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"BGE-102 is described as a once-daily oral NLRP3 inhibitor,\" confirming that BGE-102 is indeed the investigational drug being evaluated in the trial.",
+    "justification": "The source text explicitly states that \"BGE-102 is described as a once-daily oral NLRP3 inhibitor,\" confirming that BGE-102 is indeed the investigational drug being evaluated in the trial.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc8_c04",
+    "doc_id": "doc8",
+    "category": "entity",
+    "claim_text": "The trial is being conducted by BioAge Labs.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"BioAge Labs announced\" the trial, indicating that the trial is being conducted by BioAge Labs.",
+    "justification": "The source text explicitly states that \"BioAge Labs announced\" the trial, indicating that the trial is being conducted by BioAge Labs.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc8_c05",
+    "doc_id": "doc8",
+    "category": "causal",
+    "claim_text": "BGE-102 has already been shown to restore vision in diabetic macular edema.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that the purpose of the Phase 2 trial is to determine whether BGE-102 produces clinically meaningful benefits, and it explicitly mentions that there is no evidence that the treatment is effective at this stage.",
+    "justification": "The source text states that the purpose of the Phase 2 trial is to determine whether BGE-102 produces clinically meaningful benefits, and it explicitly mentions that there is no evidence that the treatment is effective at this stage.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc8_c06",
+    "doc_id": "doc8",
+    "category": "causal",
+    "claim_text": "NLRP3 inhibition necessarily prevents retinal damage caused by diabetes.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text discusses the potential role of NLRP3 inhibition in inflammatory pathways associated with diabetic macular edema but explicitly states that these biological mechanisms do not establish that BGE-102 will improve vision in patients. Therefore, the claim that \"NLRP3 inhibition necessarily prevents retinal damage caused by diabetes\" is not supported.",
+    "justification": "The source text discusses the potential role of NLRP3 inhibition in inflammatory pathways associated with diabetic macular edema but explicitly states that these biological mechanisms do not establish that BGE-102 will improve vision in patients. Therefore, the claim that \"NLRP3 inhibition necessarily prevents retinal damage caused by diabetes\" is not supported.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc8_c07",
+    "doc_id": "doc8",
+    "category": "hedged_plausible",
+    "claim_text": "BGE-102 could potentially provide an oral alternative or complement to injectable treatment if efficacy is demonstrated.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text states that BGE-102 is being evaluated as both a standalone treatment and in combination with standard-of-care anti-VEGF therapy, suggesting it could serve as an oral alternative or complement to injectable treatments if proven effective.",
+    "justification": "The source text states that BGE-102 is being evaluated as both a standalone treatment and in combination with standard-of-care anti-VEGF therapy, suggesting it could serve as an oral alternative or complement to injectable treatments if proven effective.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc8_c08",
+    "doc_id": "doc8",
+    "category": "hedged_plausible",
+    "claim_text": "The trial may provide evidence useful for developing NLRP3-targeting treatments in other retinal diseases.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text states that results from the study are intended to inform the company's development strategy for other NLRP3-related retinal diseases, which supports the claim that the trial may provide evidence useful for developing NLRP3-targeting treatments in other retinal diseases.",
+    "justification": "The source text states that results from the study are intended to inform the company's development strategy for other NLRP3-related retinal diseases, which supports the claim that the trial may provide evidence useful for developing NLRP3-targeting treatments in other retinal diseases.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc8_c09",
+    "doc_id": "doc8",
+    "category": "supported_control",
+    "claim_text": "QUELL-DME is a randomized, controlled Phase 2 trial.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that QUELL-DME is a \"randomized, controlled Phase 2 clinical trial,\" directly supporting the claim.",
+    "justification": "The source text explicitly states that QUELL-DME is a \"randomized, controlled Phase 2 clinical trial,\" directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc8_c10",
+    "doc_id": "doc8",
+    "category": "supported_control",
+    "claim_text": "The study evaluates BGE-102 both as monotherapy and in combination with anti-VEGF therapy.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that the trial is designed to evaluate BGE-102 both as a standalone treatment (monotherapy) and in combination with standard-of-care anti-VEGF therapy.",
+    "justification": "The source text explicitly states that the trial is designed to evaluate BGE-102 both as a standalone treatment (monotherapy) and in combination with standard-of-care anti-VEGF therapy.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc9_c01",
+    "doc_id": "doc9",
+    "category": "numerical",
+    "claim_text": "The asteroid 2025 MN45 completes one full rotation every 2.14 minutes.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source states that asteroid 2025 MN45 completes one full rotation every 1.88 minutes, not 2.14 minutes as claimed.",
+    "justification": "The source states that asteroid 2025 MN45 completes one full rotation every 1.88 minutes, not 2.14 minutes as claimed.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc9_c02",
+    "doc_id": "doc9",
+    "category": "numerical",
+    "claim_text": "The study identified 23 super- and ultra-fast-rotating asteroids during the observation period.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that the study identified 19 super- and ultra-fast-rotating asteroids, not 23, during the observation period.",
+    "justification": "The source text states that the study identified 19 super- and ultra-fast-rotating asteroids, not 23, during the observation period.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc9_c03",
+    "doc_id": "doc9",
+    "category": "entity",
+    "claim_text": "The research was led by Michael Chen, an astronomer at NOIRLab and head of Rubin Observatory's Near-Earth Objects working group.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text does not mention Michael Chen or indicate that he led the research, nor does it provide any information about his affiliation with NOIRLab or the Rubin Observatory's Near-Earth Objects working group.",
+    "justification": "The source text does not mention Michael Chen or indicate that he led the research, nor does it provide any information about his affiliation with NOIRLab or the Rubin Observatory's Near-Earth Objects working group.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc9_c04",
+    "doc_id": "doc9",
+    "category": "entity",
+    "claim_text": "The findings were presented at the 248th meeting of the American Astronomical Society in Tucson, Arizona.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that the findings were presented at the 247th AAS meeting in Phoenix, not the 248th meeting in Tucson, Arizona.",
+    "justification": "The source text states that the findings were presented at the 247th AAS meeting in Phoenix, not the 248th meeting in Tucson, Arizona.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc9_c05",
+    "doc_id": "doc9",
+    "category": "causal",
+    "claim_text": "The discovery of 2025 MN45 proves that most main-belt asteroids are monolithic rock rather than rubble piles.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text does not provide any information about the composition of most main-belt asteroids, nor does it support the claim that the discovery of 2025 MN45 proves they are monolithic rock rather than rubble piles.",
+    "justification": "The source text does not provide any information about the composition of most main-belt asteroids, nor does it support the claim that the discovery of 2025 MN45 proves they are monolithic rock rather than rubble piles.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc9_c06",
+    "doc_id": "doc9",
+    "category": "causal",
+    "claim_text": "Rubin Observatory's rapid imaging capability directly caused the identification of all 19 fast rotators, which would have been impossible with any other telescope.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text does not state that Rubin Observatory's rapid imaging capability directly caused the identification of all 19 fast rotators or that it would have been impossible with any other telescope. It only mentions the discovery of the asteroids using Rubin Observatory data without attributing the findings to a specific capability or making comparisons with other telescopes.",
+    "justification": "The source text does not state that Rubin Observatory's rapid imaging capability directly caused the identification of all 19 fast rotators or that it would have been impossible with any other telescope. It only mentions the discovery of the asteroids using Rubin Observatory data without attributing the findings to a specific capability or making comparisons with other telescopes.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc9_c07",
+    "doc_id": "doc9",
+    "category": "hedged_plausible",
+    "claim_text": "The asteroid's rapid rotation suggests it may be a fragment from a past collision with another asteroid.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text states that \"the asteroid's rapid rotation may have been sped up by a past collision with another asteroid,\" which directly supports the claim regarding the asteroid's rapid rotation suggesting it may be a fragment from a past collision.",
+    "justification": "The source text states that \"the asteroid's rapid rotation may have been sped up by a past collision with another asteroid,\" which directly supports the claim regarding the asteroid's rapid rotation suggesting it may be a fragment from a past collision.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc9_c08",
+    "doc_id": "doc9",
+    "category": "hedged_plausible",
+    "claim_text": "Scientists expect to find more fast rotators once Rubin begins its 10-year Legacy Survey of Space and Time.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"Scientists expect to find more fast rotators once Rubin begins its 10-year Legacy Survey of Space and Time,\" directly supporting the claim.",
+    "justification": "The source text explicitly states that \"Scientists expect to find more fast rotators once Rubin begins its 10-year Legacy Survey of Space and Time,\" directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc9_c09",
+    "doc_id": "doc9",
+    "category": "supported_control",
+    "claim_text": "Asteroid 2025 MN45 has a diameter of 710 meters (0.4 miles).",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The claim that \"Asteroid 2025 MN45 has a diameter of 710 meters (0.4 miles)\" is directly supported by the source text, which explicitly states this information.",
+    "justification": "The claim that \"Asteroid 2025 MN45 has a diameter of 710 meters (0.4 miles)\" is directly supported by the source text, which explicitly states this information.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc9_c10",
+    "doc_id": "doc9",
+    "category": "supported_control",
+    "claim_text": "The fast-rotation limit to avoid fragmentation for main-belt asteroids is 2.2 hours.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"The fast-rotation limit to avoid fragmentation for main-belt asteroids is 2.2 hours,\" directly supporting the claim.",
+    "justification": "The source text explicitly states that \"The fast-rotation limit to avoid fragmentation for main-belt asteroids is 2.2 hours,\" directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc10_c01",
+    "doc_id": "doc10",
+    "category": "numerical",
+    "claim_text": "AMD's Q2 2026 revenue was $12.3 billion, representing a 57% year-over-year increase.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source states that AMD's Q2 2026 revenue was $11.5 billion, not $12.3 billion, and that the year-over-year increase was 50%, not 57%.",
+    "justification": "The source states that AMD's Q2 2026 revenue was $11.5 billion, not $12.3 billion, and that the year-over-year increase was 50%, not 57%.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc10_c02",
+    "doc_id": "doc10",
+    "category": "numerical",
+    "claim_text": "Data center revenue grew 95% year-over-year to $6.2 billion in Q2 2026.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source states that data center revenue reached a record $6.7 billion, up 50% year-over-year, not 95% year-over-year to $6.2 billion.",
+    "justification": "The source states that data center revenue reached a record $6.7 billion, up 50% year-over-year, not 95% year-over-year to $6.2 billion.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc10_c03",
+    "doc_id": "doc10",
+    "category": "entity",
+    "claim_text": "AMD's new rack-scale AI platform is called Prometheus, combining EPYC Genoa CPUs with MI350 series GPUs.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that AMD launched a rack-scale AI platform called Helios, which combines EPYC Venice CPUs and MI450 series GPUs, not Prometheus with EPYC Genoa CPUs and MI350 series GPUs as claimed.",
+    "justification": "The source text states that AMD launched a rack-scale AI platform called Helios, which combines EPYC Venice CPUs and MI450 series GPUs, not Prometheus with EPYC Genoa CPUs and MI350 series GPUs as claimed.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc10_c04",
+    "doc_id": "doc10",
+    "category": "entity",
+    "claim_text": "AMD announced a strategic partnership with Google DeepMind to deploy up to 1.5 GW of MI450 series GPUs.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text mentions a strategic partnership with Anthropic for up to 2 GW of MI450 GPUs, but it does not mention any partnership with Google DeepMind or any deployment of 1.5 GW of MI450 series GPUs.",
+    "justification": "The source text mentions a strategic partnership with Anthropic for up to 2 GW of MI450 GPUs, but it does not mention any partnership with Google DeepMind or any deployment of 1.5 GW of MI450 series GPUs.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc10_c05",
+    "doc_id": "doc10",
+    "category": "causal",
+    "claim_text": "The launch of Helios directly caused AMD's data center revenue to more than double year-over-year in Q2 2026.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that AMD's data center revenue reached a record $6.7 billion, but it does not explicitly state that the launch of Helios directly caused this increase or that the revenue more than doubled year-over-year. The claim implies a direct causal relationship that is not supported by the provided information.",
+    "justification": "The source text states that AMD's data center revenue reached a record $6.7 billion, but it does not explicitly state that the launch of Helios directly caused this increase or that the revenue more than doubled year-over-year. The claim implies a direct causal relationship that is not supported by the provided information.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc10_c06",
+    "doc_id": "doc10",
+    "category": "causal",
+    "claim_text": "AMD's partnership with Anthropic will make ROCm the dominant AI software platform by 2027.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text mentions AMD's partnership with Anthropic and the deployment of MI450 GPUs, but it does not provide any information or support for the claim that ROCm will become the dominant AI software platform by 2027.",
+    "justification": "The source text mentions AMD's partnership with Anthropic and the deployment of MI450 GPUs, but it does not provide any information or support for the claim that ROCm will become the dominant AI software platform by 2027.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc10_c07",
+    "doc_id": "doc10",
+    "category": "hedged_plausible",
+    "claim_text": "AMD expects server CPU revenue to grow more than 80% year-over-year in the second half of 2026.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"AMD expects server CPU revenue to grow more than 80% year-over-year in the second half of 2026,\" directly supporting the claim.",
+    "justification": "The source text explicitly states that \"AMD expects server CPU revenue to grow more than 80% year-over-year in the second half of 2026,\" directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc10_c08",
+    "doc_id": "doc10",
+    "category": "hedged_plausible",
+    "claim_text": "The company plans to launch a new rack-scale AI platform every year, with each generation delivering performance and efficiency gains.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"the company plans to launch a new rack-scale AI platform every year, with each generation delivering performance and efficiency gains,\" which directly supports the claim.",
+    "justification": "The source text explicitly states that \"the company plans to launch a new rack-scale AI platform every year, with each generation delivering performance and efficiency gains,\" which directly supports the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc10_c09",
+    "doc_id": "doc10",
+    "category": "supported_control",
+    "claim_text": "AMD's gross margin for Q2 2026 expanded to 56%, up over 200 basis points year-over-year.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The claim is directly supported by the source text, which states that \"AMD's gross margin for Q2 2026 expanded to 56%, up over 200 basis points year-over-year.\"",
+    "justification": "The claim is directly supported by the source text, which states that \"AMD's gross margin for Q2 2026 expanded to 56%, up over 200 basis points year-over-year.\"",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc10_c10",
+    "doc_id": "doc10",
+    "category": "supported_control",
+    "claim_text": "The company expects Q3 2026 revenue of approximately $13 billion ±$300 million.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The claim is directly supported by the source text, which states that \"Q3 2026 revenue guidance is approximately $13 billion ±$300 million.\"",
+    "justification": "The claim is directly supported by the source text, which states that \"Q3 2026 revenue guidance is approximately $13 billion ±$300 million.\"",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc11_c01",
+    "doc_id": "doc11",
+    "category": "numerical",
+    "claim_text": "Police recorded 1,523 e-bike-related complaints and 94 documented collisions over recent years.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that police reported 1,369 e-bike complaints and 82 documented collisions, which does not support the claim of 1,523 complaints and 94 collisions.",
+    "justification": "The source text states that police reported 1,369 e-bike complaints and 82 documented collisions, which does not support the claim of 1,523 complaints and 94 collisions.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc11_c02",
+    "doc_id": "doc11",
+    "category": "numerical",
+    "claim_text": "The ordinance proposes a 7 mph speed limit on sidewalks when pedestrians are present and 12 mph otherwise.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that the ordinance proposes a 5 mph speed limit on sidewalks with pedestrians present and 10 mph otherwise, which does not support the claim of a 7 mph and 12 mph speed limit.",
+    "justification": "The source text states that the ordinance proposes a 5 mph speed limit on sidewalks with pedestrians present and 10 mph otherwise, which does not support the claim of a 7 mph and 12 mph speed limit.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc11_c03",
+    "doc_id": "doc11",
+    "category": "entity",
+    "claim_text": "Ordinance No. 638-26 was introduced on September 8, 2026, and is scheduled for final adoption at the September 22 City Council Meeting.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that Ordinance No. 637-26 was introduced on September 1, 2026, and is scheduled for a second reading on September 15, 2026, not Ordinance No. 638-26 on September 8, 2026. There is no mention of a September 22 City Council Meeting for final adoption.",
+    "justification": "The source text states that Ordinance No. 637-26 was introduced on September 1, 2026, and is scheduled for a second reading on September 15, 2026, not Ordinance No. 638-26 on September 8, 2026. There is no mention of a September 22 City Council Meeting for final adoption.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc11_c04",
+    "doc_id": "doc11",
+    "category": "entity",
+    "claim_text": "City Attorney Jennifer Martinez advised the council that state law allows local age restrictions on e-bike operators.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text does not mention City Attorney Jennifer Martinez or any advice regarding state law allowing local age restrictions on e-bike operators. It only states that councilmembers asked staff to pursue state legislative options on this matter.",
+    "justification": "The source text does not mention City Attorney Jennifer Martinez or any advice regarding state law allowing local age restrictions on e-bike operators. It only states that councilmembers asked staff to pursue state legislative options on this matter.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc11_c05",
+    "doc_id": "doc11",
+    "category": "causal",
+    "claim_text": "The surge in e-bike complaints directly caused the 75 injuries and one fatality reported by police.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text reports the number of e-bike complaints, injuries, and fatalities but does not establish a direct causal relationship between the complaints and the injuries or fatality. The claim implies causation that is not explicitly supported by the information provided.",
+    "justification": "The source text reports the number of e-bike complaints, injuries, and fatalities but does not establish a direct causal relationship between the complaints and the injuries or fatality. The claim implies causation that is not explicitly supported by the information provided.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc11_c06",
+    "doc_id": "doc11",
+    "category": "causal",
+    "claim_text": "The voluntary diversion/education course will eliminate repeat juvenile e-bike violations within six months.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text does not mention a voluntary diversion/education course or any specific measures that would eliminate repeat juvenile e-bike violations within six months. It only discusses parental accountability for repeat violations and the introduction of an ordinance.",
+    "justification": "The source text does not mention a voluntary diversion/education course or any specific measures that would eliminate repeat juvenile e-bike violations within six months. It only discusses parental accountability for repeat violations and the introduction of an ordinance.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc11_c07",
+    "doc_id": "doc11",
+    "category": "hedged_plausible",
+    "claim_text": "The 1,369 complaint figure is described by police as \"a conservative minimum\" that could be higher.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The claim is directly supported by the source text, which states that the police described the 1,369 complaint figure as \"a conservative minimum\" that could be higher.",
+    "justification": "The claim is directly supported by the source text, which states that the police described the 1,369 complaint figure as \"a conservative minimum\" that could be higher.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc11_c08",
+    "doc_id": "doc11",
+    "category": "hedged_plausible",
+    "claim_text": "Councilmembers asked staff to pursue state legislative options regarding age limits on e-bike operators.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"Councilmembers asked staff to pursue state legislative options regarding age limits on e-bike operators,\" directly supporting the claim.",
+    "justification": "The source text explicitly states that \"Councilmembers asked staff to pursue state legislative options regarding age limits on e-bike operators,\" directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc11_c09",
+    "doc_id": "doc11",
+    "category": "supported_control",
+    "claim_text": "The City Council voted unanimously 5-0 to introduce the ordinance for further readings.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"The City Council voted unanimously 5-0 to introduce the ordinance for further readings,\" directly supporting the claim.",
+    "justification": "The source text explicitly states that \"The City Council voted unanimously 5-0 to introduce the ordinance for further readings,\" directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc11_c10",
+    "doc_id": "doc11",
+    "category": "supported_control",
+    "claim_text": "Police conducted 10 directed enforcement operations resulting in 146 traffic stops and 102 citations.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The claim is directly supported by the source text, which states that \"Police conducted 10 directed enforcement operations resulting in 146 traffic stops and 102 citations.\"",
+    "justification": "The claim is directly supported by the source text, which states that \"Police conducted 10 directed enforcement operations resulting in 146 traffic stops and 102 citations.\"",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc12_c01",
+    "doc_id": "doc12",
+    "category": "numerical",
+    "claim_text": "The Phase 2 study demonstrated 52% slowing of disease progression compared to placebo on the UMSARS Part I scale.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that the Phase 2 data showed a 48% slowing of disease progression versus placebo, not 52%. Therefore, the claim is not supported by the source.",
+    "justification": "The source text states that the Phase 2 data showed a 48% slowing of disease progression versus placebo, not 52%. Therefore, the claim is not supported by the source.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc12_c02",
+    "doc_id": "doc12",
+    "category": "numerical",
+    "claim_text": "Approximately 250 patients will be enrolled in the Phase 3 trial, randomly assigned in a 2:1 ratio to treatment or placebo.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that approximately 200 patients will be enrolled in the Phase 3 trial in a 1:1 randomized ratio, not 250 patients in a 2:1 ratio as claimed.",
+    "justification": "The source text states that approximately 200 patients will be enrolled in the Phase 3 trial in a 1:1 randomized ratio, not 250 patients in a 2:1 ratio as claimed.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc12_c03",
+    "doc_id": "doc12",
+    "category": "entity",
+    "claim_text": "The FDA agreed on the 12-item UMSARS Part II rating scale as the primary endpoint for the Phase 3 trial.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that the FDA agreed on the 11-item UMSARS Part I as the primary endpoint for the Phase 3 trial, not the 12-item UMSARS Part II rating scale.",
+    "justification": "The source text states that the FDA agreed on the 11-item UMSARS Part I as the primary endpoint for the Phase 3 trial, not the 12-item UMSARS Part II rating scale.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc12_c04",
+    "doc_id": "doc12",
+    "category": "entity",
+    "claim_text": "ATH434 received Breakthrough Therapy Designation from the FDA in addition to Fast Track and Orphan Drug Designation.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that ATH434 has Fast Track and Orphan Drug Designation from the FDA, but it does not mention Breakthrough Therapy Designation. Therefore, the claim is not directly supported by the source.",
+    "justification": "The source text states that ATH434 has Fast Track and Orphan Drug Designation from the FDA, but it does not mention Breakthrough Therapy Designation. Therefore, the claim is not directly supported by the source.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc12_c05",
+    "doc_id": "doc12",
+    "category": "causal",
+    "claim_text": "The 48% slowing of disease progression in Phase 2 proves that ATH434 will halt MSA progression entirely in Phase 3.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source states that Phase 2 data showed a 48% slowing of disease progression versus placebo, but it does not claim that this proves ATH434 will halt MSA progression entirely in Phase 3. The claim is an exaggerated interpretation of the data presented.",
+    "justification": "The source states that Phase 2 data showed a 48% slowing of disease progression versus placebo, but it does not claim that this proves ATH434 will halt MSA progression entirely in Phase 3. The claim is an exaggerated interpretation of the data presented.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc12_c06",
+    "doc_id": "doc12",
+    "category": "causal",
+    "claim_text": "The FDA's agreement on the trial design guarantees regulatory approval of ATH434 for MSA by 2028.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that the FDA agreed on the Phase 3 trial design but does not guarantee regulatory approval of ATH434 for MSA by 2028. The claim makes a definitive statement about future approval that is not supported by the information provided.",
+    "justification": "The source text states that the FDA agreed on the Phase 3 trial design but does not guarantee regulatory approval of ATH434 for MSA by 2028. The claim makes a definitive statement about future approval that is not supported by the information provided.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc12_c07",
+    "doc_id": "doc12",
+    "category": "hedged_plausible",
+    "claim_text": "The Phase 3 trial will evaluate secondary endpoints including the Swallowing Disturbance Questionnaire and Orthostatic Hypotension Symptom Assessment.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that key secondary endpoints for the Phase 3 trial include the Swallowing Disturbance Questionnaire and Orthostatic Hypotension Symptom Assessment, directly supporting the claim.",
+    "justification": "The source text explicitly states that key secondary endpoints for the Phase 3 trial include the Swallowing Disturbance Questionnaire and Orthostatic Hypotension Symptom Assessment, directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc12_c08",
+    "doc_id": "doc12",
+    "category": "hedged_plausible",
+    "claim_text": "ATH434 is designed to redistribute excess iron and inhibit abnormal protein aggregation associated with neurodegeneration.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"ATH434 is designed to redistribute excess iron and inhibit abnormal protein aggregation associated with neurodegeneration,\" directly supporting the claim.",
+    "justification": "The source text explicitly states that \"ATH434 is designed to redistribute excess iron and inhibit abnormal protein aggregation associated with neurodegeneration,\" directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc12_c09",
+    "doc_id": "doc12",
+    "category": "supported_control",
+    "claim_text": "The Phase 3 trial will be a randomized, double-blind, placebo-controlled investigation with 12 months of treatment.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"The Phase 3 trial will be a randomized, double-blind, placebo-controlled investigation with 12 months of treatment,\" directly supporting the claim.",
+    "justification": "The source text explicitly states that \"The Phase 3 trial will be a randomized, double-blind, placebo-controlled investigation with 12 months of treatment,\" directly supporting the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc12_c10",
+    "doc_id": "doc12",
+    "category": "supported_control",
+    "claim_text": "The Phase 2 study (ATH434-201) enrolled 77 adults randomly assigned to receive ATH434 50mg or 75mg twice daily or placebo.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The claim is directly supported by the source text, which states that the Phase 2 study (ATH434-201) enrolled 77 adults who were randomly assigned to receive either ATH434 50mg or 75mg twice daily or placebo.",
+    "justification": "The claim is directly supported by the source text, which states that the Phase 2 study (ATH434-201) enrolled 77 adults who were randomly assigned to receive either ATH434 50mg or 75mg twice daily or placebo.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc13_c01",
+    "doc_id": "doc13",
+    "category": "numerical",
+    "claim_text": "Beta Pictoris d has a mass approximately 12 times that of Jupiter and orbits at 7.2 AU from its host star.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The claim states that Beta Pictoris d has a mass approximately 12 times that of Jupiter and orbits at 7.2 AU, while the source text specifies that the planet has a mass of approximately 9 times Jupiter's mass and orbits at about 8.5 AU.",
+    "justification": "The claim states that Beta Pictoris d has a mass approximately 12 times that of Jupiter and orbits at 7.2 AU, while the source text specifies that the planet has a mass of approximately 9 times Jupiter's mass and orbits at about 8.5 AU.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc13_c02",
+    "doc_id": "doc13",
+    "category": "numerical",
+    "claim_text": "The Beta Pictoris system is located 75 light-years from Earth in the constellation Pictor.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source states that the Beta Pictoris system is located 63 light-years from Earth, not 75 light-years as claimed.",
+    "justification": "The source states that the Beta Pictoris system is located 63 light-years from Earth, not 75 light-years as claimed.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc13_c03",
+    "doc_id": "doc13",
+    "category": "entity",
+    "claim_text": "The discovery was made using Webb's MIRI (Mid-Infrared Instrument) with its coronagraphic imaging mode.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text states that the discovery was made using Webb's NIRCam instrument with a coronagraph, not the MIRI instrument. Therefore, the claim is not supported.",
+    "justification": "The source text states that the discovery was made using Webb's NIRCam instrument with a coronagraph, not the MIRI instrument. Therefore, the claim is not supported.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc13_c04",
+    "doc_id": "doc13",
+    "category": "entity",
+    "claim_text": "The research team was led by Dr. Richard Anderson from the European Southern Observatory and published in Nature Astronomy.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text does not mention Dr. Richard Anderson, the European Southern Observatory, or that the research was published in Nature Astronomy; it only states that the discovery was published in Astronomy & Astrophysics.",
+    "justification": "The source text does not mention Dr. Richard Anderson, the European Southern Observatory, or that the research was published in Nature Astronomy; it only states that the discovery was published in Astronomy & Astrophysics.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc13_c05",
+    "doc_id": "doc13",
+    "category": "causal",
+    "claim_text": "The detection of carbon monoxide in the planet's atmosphere proves that Beta Pictoris d formed through gravitational collapse rather than core accretion.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source text mentions the detection of carbon monoxide in the planet's atmosphere but does not provide any information or evidence regarding the formation process of Beta Pictoris d, such as whether it formed through gravitational collapse or core accretion.",
+    "justification": "The source text mentions the detection of carbon monoxide in the planet's atmosphere but does not provide any information or evidence regarding the formation process of Beta Pictoris d, such as whether it formed through gravitational collapse or core accretion.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc13_c06",
+    "doc_id": "doc13",
+    "category": "causal",
+    "claim_text": "Webb's coronagraph technology enabled this discovery, which would have been completely impossible with any other existing telescope.",
+    "is_unsupported_ground_truth": true,
+    "raw_response": "VERDICT: NO  \nJUSTIFICATION: The source states that Webb's coronagraph was used to block the star's light and reveal the planet, but it does not claim that the discovery would have been \"completely impossible\" with any other existing telescope. This is an exaggerated statement not supported by the text.",
+    "justification": "The source states that Webb's coronagraph was used to block the star's light and reveal the planet, but it does not claim that the discovery would have been \"completely impossible\" with any other existing telescope. This is an exaggerated statement not supported by the text.",
+    "method_b_caught": true
+  },
+  {
+    "claim_id": "doc13_c07",
+    "doc_id": "doc13",
+    "category": "hedged_plausible",
+    "claim_text": "The planet may have been previously missed because it was concealed by a bright disk of cosmic dust surrounding the star.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"the planet may have been previously missed because it was concealed by a bright disk of cosmic dust surrounding the star,\" which directly supports the claim.",
+    "justification": "The source text explicitly states that \"the planet may have been previously missed because it was concealed by a bright disk of cosmic dust surrounding the star,\" which directly supports the claim.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc13_c08",
+    "doc_id": "doc13",
+    "category": "hedged_plausible",
+    "claim_text": "Scientists expect that Beta Pictoris d's young age (approximately 20 million years) means it may still be contracting and cooling.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The claim is directly supported by the source text, which states that scientists expect Beta Pictoris d's young age (approximately 20 million years) means it may still be contracting and cooling.",
+    "justification": "The claim is directly supported by the source text, which states that scientists expect Beta Pictoris d's young age (approximately 20 million years) means it may still be contracting and cooling.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc13_c09",
+    "doc_id": "doc13",
+    "category": "supported_control",
+    "claim_text": "Beta Pictoris d orbits at approximately 8.5 AU, which is between the distances of Saturn and Uranus from our Sun.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that Beta Pictoris d orbits at about 8.5 AU, which is described as being between the distances of Saturn and Uranus in our solar system.",
+    "justification": "The source text explicitly states that Beta Pictoris d orbits at about 8.5 AU, which is described as being between the distances of Saturn and Uranus in our solar system.",
+    "method_b_caught": false
+  },
+  {
+    "claim_id": "doc13_c10",
+    "doc_id": "doc13",
+    "category": "supported_control",
+    "claim_text": "This is the closest directly imaged planet to its host star at a separation of 9 AU.",
+    "is_unsupported_ground_truth": false,
+    "raw_response": "VERDICT: YES  \nJUSTIFICATION: The source text explicitly states that \"This is the closest directly imaged planet to its star at 9 AU,\" which directly supports the claim made.",
+    "justification": "The source text explicitly states that \"This is the closest directly imaged planet to its star at 9 AU,\" which directly supports the claim made.",
+    "method_b_caught": false
+  }
+]
