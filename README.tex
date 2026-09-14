@@ -1,0 +1,945 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    columns=fullflexible,
+    keepspaces=true
+}
+
+\title{\textbf{Self-Consistency vs. Source-Grounded NLI for Hallucination Detection}}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This project presents an empirical comparison of two black-box hallucination-detection strategies for LLM-generated summaries. Method A uses behavioral self-consistency checking, while Method B performs direct source-grounded natural language inference (NLI). The benchmark evaluates where self-consistency succeeds and fails relative to direct textual evidence.
+\end{abstract}
+
+\section{Key Findings}
+
+\subsection{Research Question}
+
+For claims injected into LLM-generated summaries:
+
+\begin{quote}
+How does the catch rate of black-box self-consistency checking
+(\textbf{Method A}) vary across claim types, and does source-grounded
+entailment (\textbf{Method B}) catch a distinct set of failures?
+\end{quote}
+
+\textbf{Model under test:} \texttt{openai/gpt-4o-mini}, accessed through the OpenRouter API for both generation and verification.
+
+\subsection{Catch Rate (Recall) on Injected Unsupported Claims}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc}
+\toprule
+\textbf{Category} & \textbf{N} & \textbf{Method A} & \textbf{Method B} \\
+\midrule
+Numerical fabrication & 11 & 100.0\% (11/11) & 100.0\% (11/11) \\
+Entity fabrication & 10 & 90.0\% (9/10) & 100.0\% (10/10) \\
+Causal overreach & 25 & 96.0\% (24/25) & 100.0\% (25/25) \\
+\midrule
+\textbf{Overall} & \textbf{46} & \textbf{95.7\% (44/46)} & \textbf{100.0\% (46/46)} \\
+\bottomrule
+\end{tabular}
+\caption{Recall on injected unsupported claims.}
+\end{table}
+
+\subsection{False Positive Rate on the 86 Supported Controls}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\textbf{Method} & \textbf{False Positives} & \textbf{FPR} \\
+\midrule
+Method A: Self-Consistency & 5/86 & 5.8\% \\
+Method B: Source-Grounded NLI & 4/86 & 4.7\% \\
+\bottomrule
+\end{tabular}
+\caption{False positive rate on supported control claims.}
+\end{table}
+
+\subsection{Cross-Tabulation: Unsupported Claims Only}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcc}
+\toprule
+ & \textbf{Method B Caught} & \textbf{Method B Missed} \\
+\midrule
+\textbf{Method A Caught} & 44 & 0 \\
+\textbf{Method A Missed} & 2 & 0 \\
+\bottomrule
+\end{tabular}
+\caption{Cross-tabulation of unsupported claims.}
+\end{table}
+
+\subsection{Takeaway}
+
+Method B strictly dominates on recall: it catches \textbf{100\% of injected unsupported claims}, including the two claims missed by Method A.
+
+Method A, despite having no access to the source document during verification, achieves \textbf{95.7\% recall}. Its failures occur primarily when an LLM reproduces a plausible narrative schema across independently generated summaries and the equivalence verifier mistakes this consistency for factual corroboration.
+
+The results highlight a fundamental distinction:
+
+\begin{quote}
+\textbf{Self-consistency measures consensus; source-grounded NLI measures textual support.}
+\end{quote}
+
+
+\section{Repository Architecture}
+
+\begin{lstlisting}
+.
+├── .env.example
+├── .gitignore
+├── README.md
+├── research_report.md
+│
+├── claims_dataset.py
+├── claims_dataset.json
+│
+├── method_a_self_consistency.py
+├── method_b_entailment.py
+│
+├── evaluate_and_score.py
+├── check_missed_claims.py
+│
+├── regenerations_cache.json
+├── method_a_results.json
+├── method_b_results.json
+└── evaluation_summary.json
+\end{lstlisting}
+
+\begin{itemize}
+    \item \texttt{.env.example}: Template for environment variables and API keys.
+    \item \texttt{.gitignore}: Ignores \texttt{.env}, \texttt{.venv}, caches, and IDE configurations.
+    \item \texttt{README.md}: Project overview, methodology, results, and reproduction guide.
+    \item \texttt{research\_report.md}: Detailed research write-up and error analysis.
+    \item \texttt{claims\_dataset.py}: Defines the 132-claim adversarial benchmark.
+    \item \texttt{method\_a\_self\_consistency.py}: Implements Method A.
+    \item \texttt{method\_b\_entailment.py}: Implements Method B.
+    \item \texttt{evaluate\_and\_score.py}: Calculates evaluation metrics.
+    \item \texttt{check\_missed\_claims.py}: Inspects Method A false negatives.
+\end{itemize}
+
+The files \texttt{.env}, \texttt{.venv/}, and \texttt{\_\_pycache\_\_/} are deliberately excluded from the repository through \texttt{.gitignore}.
+
+\subsection{Dataset Generation}
+
+The benchmark JSON file is generated by running:
+
+\begin{lstlisting}[language=bash]
+python claims_dataset.py
+\end{lstlisting}
+
+The downstream evaluation scripts read the serialized JSON directly from disk.
+
+
+\section{Methodology}
+
+\subsection{Adversarial Dataset}
+
+The benchmark is defined in \texttt{claims\_dataset.py} and contains:
+
+\begin{itemize}
+    \item \textbf{132 total claims}
+    \item \textbf{13 source documents}
+    \item \textbf{46 unsupported injected claims}
+    \item \textbf{86 supported control claims}
+\end{itemize}
+
+The source documents cover multiple technical and factual domains, including:
+
+\begin{itemize}
+    \item Astronomy press releases
+    \item Corporate earnings reports
+    \item Municipal continuity orders
+    \item Clinical trial readouts
+    \item Semiconductor hardware announcements
+\end{itemize}
+
+Each dataset entry contains:
+
+\begin{lstlisting}
+claim_id
+doc_id
+source_text
+claim_text
+category
+is_unsupported
+\end{lstlisting}
+
+\subsection{Claim Categories}
+
+\subsubsection{Unsupported Injections -- N=46}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcl}
+\toprule
+\textbf{Category} & \textbf{N} & \textbf{Description} \\
+\midrule
+\texttt{numerical} & 11 & Altered metrics, dates, percentages, and sample sizes \\
+\texttt{entity} & 10 & Fabricated researchers, organizations, partners, or instruments \\
+\texttt{causal} & 25 & Unsupported causal extrapolations and premature efficacy claims \\
+\bottomrule
+\end{tabular}
+\caption{Unsupported claim categories.}
+\end{table}
+
+\subsubsection{Supported Controls -- N=86}
+
+Supported claims are grounded factual claims and appropriately hedged statements where:
+
+\begin{lstlisting}
+is_unsupported = False
+\end{lstlisting}
+
+
+\subsection{Method A -- Self-Consistency}
+
+\textbf{Implementation:}
+
+\begin{lstlisting}
+method_a_self_consistency.py
+\end{lstlisting}
+
+Method A is deliberately \textbf{source-blind at verification time}. It attempts to detect hallucinations by measuring whether an injected claim consistently appears across independently generated summaries.
+
+\subsubsection{Procedure}
+
+\begin{enumerate}
+    \item For each of the 13 source documents, generate \textbf{5 alternative summaries}.
+    \item Generation uses:
+\end{enumerate}
+
+\begin{lstlisting}
+N_REGENERATIONS = 5
+temperature = 0.7
+\end{lstlisting}
+
+\begin{enumerate}[resume]
+    \item Generated summaries are cached in \texttt{regenerations\_cache.json}.
+    \item For each of the 132 claims, run a binary equivalence check against each of the 5 summaries.
+    \item Each equivalence check uses:
+\end{enumerate}
+
+\begin{lstlisting}
+temperature = 0.0
+\end{lstlisting}
+
+\begin{enumerate}[resume]
+    \item Calculate the agreement score:
+\end{enumerate}
+
+\begin{lstlisting}
+agreement_score = matches / 5
+\end{lstlisting}
+
+\begin{enumerate}[resume]
+    \item Flag the claim as unsupported when:
+\end{enumerate}
+
+\begin{lstlisting}
+agreement_score <= 0.40
+\end{lstlisting}
+
+In other words, a claim is considered ``caught'' when it appears to be supported by no more than \textbf{2 of the 5 generated summaries}.
+
+\subsubsection{Important Property}
+
+Method A does \textbf{not} inspect the original source text during verification. Its signal is therefore behavioral consistency rather than direct factual grounding.
+
+
+\subsection{Method B -- Source-Grounded NLI}
+
+\textbf{Implementation:}
+
+\begin{lstlisting}
+method_b_entailment.py
+\end{lstlisting}
+
+Method B performs a direct source-grounded entailment check. For each claim, the verifier receives the relevant source text and determines whether the source directly supports the claim.
+
+\subsubsection{Procedure}
+
+For each claim:
+
+\begin{enumerate}
+    \item Provide the source text.
+    \item Provide the claim.
+    \item Ask whether the source directly supports the assertion.
+    \item Run the verification prompt at:
+\end{enumerate}
+
+\begin{lstlisting}
+temperature = 0.0
+\end{lstlisting}
+
+\begin{enumerate}[resume]
+    \item Parse the categorical output:
+\end{enumerate}
+
+\begin{lstlisting}
+VERDICT: YES
+\end{lstlisting}
+
+or
+
+\begin{lstlisting}
+VERDICT: NO
+\end{lstlisting}
+
+\begin{enumerate}[resume]
+    \item A \texttt{NO} verdict marks the unsupported claim as caught.
+\end{enumerate}
+
+Method B therefore has direct access to the evidence against which the claim is evaluated.
+
+
+\subsection{Scoring}
+
+Evaluation is performed by:
+
+\begin{lstlisting}
+evaluate_and_score.py
+\end{lstlisting}
+
+The script joins:
+
+\begin{lstlisting}
+method_a_results.json
+method_b_results.json
+\end{lstlisting}
+
+using:
+
+\begin{lstlisting}
+claim_id
+\end{lstlisting}
+
+It then calculates:
+
+\begin{itemize}
+    \item Overall recall
+    \item Category-level recall
+    \item False positive rate on supported controls
+    \item Cross-tabulation between Method A and Method B
+\end{itemize}
+
+Qualitative inspection of Method A's false negatives is performed by:
+
+\begin{lstlisting}
+check_missed_claims.py
+\end{lstlisting}
+
+
+\section{Detailed Results and Failure Analysis}
+
+Method A missed exactly \textbf{2 of the 46 injected unsupported claims}. Both were correctly caught by Method B.
+
+\subsection{Failure Case 1 -- Entity Fabrication}
+
+\textbf{Claim ID:} \texttt{doc11\_c04}
+
+\textbf{Category:} Entity Fabrication
+
+\textbf{Method A Agreement Score:} 0.8 / 80\%
+
+\subsubsection{Injected Claim}
+
+\begin{quote}
+``City Attorney Jennifer Martinez advised the council that state law allows local age restrictions on e-bike operators.''
+\end{quote}
+
+\subsubsection{Source Truth}
+
+The source states that councilmembers asked municipal staff to pursue legislative options. No city attorney named Jennifer Martinez was identified as having advised the council.
+
+\subsubsection{Why Method A Failed}
+
+The generated summaries repeatedly focused on the municipal regulatory debate. The equivalence verifier therefore encountered a plausible narrative structure involving:
+
+\begin{itemize}
+    \item Municipal regulation
+    \item City officials
+    \item State law
+    \item E-bike restrictions
+\end{itemize}
+
+Because these concepts appeared consistently across generations, the verifier treated the fabricated official attribution as semantically supported.
+
+\subsubsection{Failure Mechanism}
+
+The verifier exhibited \textbf{semantic drift}:
+
+\begin{lstlisting}
+Topical consistency
+        |
+        v
+Similar narrative framing
+        |
+        v
+Perceived semantic equivalence
+        |
+        v
+False acceptance
+\end{lstlisting}
+
+The problem is that contextual plausibility does not establish factual support.
+
+
+\subsection{Failure Case 2 -- Causal Overreach}
+
+\textbf{Claim ID:} \texttt{doc13\_c06}
+
+\textbf{Category:} Causal Overreach
+
+\textbf{Method A Agreement Score:} 1.0 / 100\%
+
+\subsubsection{Injected Claim}
+
+\begin{quote}
+``Webb's coronagraph technology enabled this discovery, which would have been completely impossible with any other existing telescope.''
+\end{quote}
+
+\subsubsection{Source Truth}
+
+The source describes how the coronagraph operates and its role in the observation. However, it does not establish that:
+
+\begin{itemize}
+    \item the discovery was exclusively enabled by Webb's coronagraph, or
+    \item the discovery would have been completely impossible using every other existing telescope.
+\end{itemize}
+
+\subsubsection{Why Method A Failed}
+
+Every generated summary emphasized the importance of the coronagraph. The equivalence verifier therefore observed extremely high agreement:
+
+\begin{lstlisting}
+5 / 5 summaries
+=
+agreement score of 1.0
+\end{lstlisting}
+
+However, the injected claim contained a much stronger assertion than the source:
+
+\begin{lstlisting}
+"The coronagraph was useful"
+\end{lstlisting}
+
+became:
+
+\begin{lstlisting}
+"The coronagraph made the discovery uniquely possible."
+\end{lstlisting}
+
+\subsubsection{Failure Mechanism}
+
+Method A conflated repeated rhetorical emphasis with evidence for an absolute causal claim.
+
+This is particularly problematic for claims containing:
+
+\begin{itemize}
+    \item ``only''
+    \item ``completely impossible''
+    \item ``the first''
+    \item ``the only''
+    \item ``always''
+    \item ``never''
+    \item ``caused''
+    \item ``enabled''
+    \item ``proved''
+\end{itemize}
+
+
+\section{What the Failure Cases Demonstrate}
+
+The two false negatives expose the central theoretical limitation of self-consistency-based hallucination detection:
+
+\begin{quote}
+\textbf{A model can consistently repeat a hallucination.}
+\end{quote}
+
+Independent generations are not independent sources of truth. They are samples from the same model's learned distribution.
+
+If the model has a strong prior about a particular narrative structure, multiple generations can converge on the same unsupported assertion.
+
+Therefore:
+
+\[
+\text{High agreement} \neq \text{High factuality}
+\]
+
+More precisely:
+
+\[
+\begin{array}{c}
+\text{Self-consistency}\\
+\downarrow\\
+\text{Behavioral agreement}
+\end{array}
+\qquad
+\begin{array}{c}
+\text{Source-grounded NLI}\\
+\downarrow\\
+\text{Evidence support}
+\end{array}
+\]
+
+This distinction explains why Method B was able to catch both of Method A's false negatives.
+
+
+\section{Quickstart}
+
+\subsection{Requirements}
+
+\begin{itemize}
+    \item Python 3.10 or higher
+    \item An OpenRouter API key (or OpenAI-compatible provider)
+\end{itemize}
+
+\subsection{Clone the Repository}
+
+\begin{lstlisting}[language=bash]
+git clone <YOUR_REPOSITORY_URL>
+cd <YOUR_REPOSITORY_DIRECTORY>
+\end{lstlisting}
+
+\subsection{Create and Activate a Virtual Environment}
+
+\subsubsection{macOS / Linux}
+
+\begin{lstlisting}[language=bash]
+python3 -m venv .venv
+source .venv/bin/activate
+\end{lstlisting}
+
+\subsubsection{Windows}
+
+\begin{lstlisting}[language=bash]
+python -m venv .venv
+.venv\Scripts\activate
+\end{lstlisting}
+
+\subsection{Install Dependencies}
+
+\begin{lstlisting}[language=bash]
+pip install openai tqdm python-dotenv
+\end{lstlisting}
+
+\subsection{Configure API Credentials}
+
+Copy the example environment file:
+
+\begin{lstlisting}[language=bash]
+cp .env.example .env
+\end{lstlisting}
+
+Then edit \texttt{.env}:
+
+\begin{lstlisting}
+OPENROUTER_API_KEY=your_key_here
+\end{lstlisting}
+
+Do \textbf{not} commit \texttt{.env} to GitHub. The repository's \texttt{.gitignore} is configured to exclude it.
+
+
+\section{Reproduction Pipeline}
+
+Run the scripts sequentially.
+
+\subsection{Step 1 -- Generate Dataset}
+
+\begin{lstlisting}[language=bash]
+python claims_dataset.py
+\end{lstlisting}
+
+This creates:
+
+\begin{lstlisting}
+claims_dataset.json
+\end{lstlisting}
+
+\subsection{Step 2 -- Run Method A}
+
+\begin{lstlisting}[language=bash]
+python method_a_self_consistency.py
+\end{lstlisting}
+
+This generates:
+
+\begin{lstlisting}
+regenerations_cache.json
+method_a_results.json
+\end{lstlisting}
+
+The first file caches the five generated summaries per source document.
+
+\subsection{Step 3 -- Run Method B}
+
+\begin{lstlisting}[language=bash]
+python method_b_entailment.py
+\end{lstlisting}
+
+This generates:
+
+\begin{lstlisting}
+method_b_results.json
+\end{lstlisting}
+
+\subsection{Step 4 -- Evaluate Both Methods}
+
+\begin{lstlisting}[language=bash]
+python evaluate_and_score.py
+\end{lstlisting}
+
+This generates:
+
+\begin{lstlisting}
+evaluation_summary.json
+\end{lstlisting}
+
+The evaluation contains:
+
+\begin{itemize}
+    \item Category-level recall
+    \item Overall recall
+    \item False positive rates
+    \item Cross-tabulation
+\end{itemize}
+
+\subsection{Step 5 -- Inspect Method A Misses}
+
+\begin{lstlisting}[language=bash]
+python check_missed_claims.py
+\end{lstlisting}
+
+This prints the unsupported claims that:
+
+\begin{itemize}
+    \item Method A missed
+    \item Method B caught
+\end{itemize}
+
+This provides a qualitative error analysis of the self-consistency approach.
+
+
+\section{Caching}
+
+\texttt{method\_a\_self\_consistency.py} caches generated summaries in:
+
+\begin{lstlisting}
+regenerations_cache.json
+\end{lstlisting}
+
+This prevents unnecessary regeneration when rerunning the evaluation.
+
+To regenerate all summaries from scratch, delete the cache:
+
+\begin{lstlisting}[language=bash]
+rm regenerations_cache.json
+\end{lstlisting}
+
+Then rerun:
+
+\begin{lstlisting}[language=bash]
+python method_a_self_consistency.py
+\end{lstlisting}
+
+
+\section{Environment Variables}
+
+The project expects:
+
+\begin{lstlisting}
+OPENROUTER_API_KEY=your_key_here
+\end{lstlisting}
+
+The scripts use \texttt{python-dotenv} to load the value from \texttt{.env}.
+
+Example \texttt{.env.example}:
+
+\begin{lstlisting}
+OPENROUTER_API_KEY=
+\end{lstlisting}
+
+
+\section{Reproducibility Notes}
+
+The benchmark is deterministic at the verification stage because both verification methods use:
+
+\begin{lstlisting}
+temperature = 0.0
+\end{lstlisting}
+
+Method A's summary generation intentionally uses stochastic generation:
+
+\begin{lstlisting}
+temperature = 0.7
+N = 5
+\end{lstlisting}
+
+Therefore, deleting \texttt{regenerations\_cache.json} and regenerating summaries can potentially produce different intermediate generations and agreement scores.
+
+For reproducing the reported results as closely as possible, use the committed:
+
+\begin{lstlisting}
+regenerations_cache.json
+method_a_results.json
+method_b_results.json
+evaluation_summary.json
+\end{lstlisting}
+
+
+\section{Threats to Validity}
+
+\subsection{Single-Model Evaluator}
+
+Both summary generation and verification rely on:
+
+\begin{lstlisting}
+openai/gpt-4o-mini
+\end{lstlisting}
+
+Therefore, the results do not establish that the same performance would occur with other models. Cross-model verification using models such as Claude, Gemini, or Llama was not evaluated.
+
+\subsection{Dataset Scale}
+
+The benchmark contains:
+
+\begin{lstlisting}
+132 claims
+13 source documents
+46 unsupported claims
+86 supported controls
+\end{lstlisting}
+
+The dataset was constructed by a single author. No multi-annotator inter-rater reliability analysis, such as Cohen's Kappa, was performed.
+
+\subsection{Threshold Parameterization}
+
+Method A uses:
+
+\begin{lstlisting}
+N = 5 regenerations
+threshold <= 0.40
+\end{lstlisting}
+
+This represents an explicit design choice. Changing either parameter could alter the precision/recall trade-off.
+
+For example:
+
+\begin{lstlisting}
+More regenerations
+        |
+        v
+Higher computational cost
+        |
+        v
+Potentially more stable agreement estimates
+\end{lstlisting}
+
+Changing the threshold can similarly alter how aggressively low-consensus claims are flagged.
+
+\subsection{Prompt Dependence}
+
+Both methods depend on the exact prompts used for:
+
+\begin{itemize}
+    \item Summary generation
+    \item Equivalence verification
+    \item Source-grounded entailment
+\end{itemize}
+
+Small changes to prompt wording may affect model behavior.
+
+\subsection{Synthetic Adversarial Claims}
+
+The benchmark consists of deliberately injected unsupported claims. Although the categories are designed to represent common hallucination patterns, performance on naturally occurring hallucinations in production systems may differ.
+
+
+\section{Interpretation}
+
+The benchmark suggests that source-grounded verification provides a stronger signal for detecting unsupported claims than self-consistency alone.
+
+\subsection{Method A}
+
+\textbf{Advantages:}
+
+\begin{itemize}
+    \item Does not require source access during verification
+    \item Can detect claims that fail to recur across generations
+    \item Achieves high recall despite being source-blind
+    \item Can potentially be applied when only generated outputs are available
+\end{itemize}
+
+\textbf{Limitations:}
+
+\begin{itemize}
+    \item Consensus can reinforce the same hallucination
+    \item Vulnerable to plausible entity fabrication
+    \item Vulnerable to causal overreach
+    \item Requires multiple generations
+    \item Higher inference cost due to repeated generation and verification
+\end{itemize}
+
+\subsection{Method B}
+
+\textbf{Advantages:}
+
+\begin{itemize}
+    \item Directly evaluates claims against source evidence
+    \item Achieved 100\% recall on this benchmark
+    \item Caught both Method A false negatives
+    \item Requires only a single verification pass per claim
+\end{itemize}
+
+\textbf{Limitations:}
+
+\begin{itemize}
+    \item Requires access to the source document
+    \item Depends on the verifier's ability to interpret the source correctly
+    \item Still produced false positives on 4 supported controls
+    \item Remains dependent on model and prompt quality
+\end{itemize}
+
+
+\section{Conclusion}
+
+This benchmark provides an empirical comparison between two fundamentally different hallucination-detection strategies.
+
+\subsection*{Method A -- Self-Consistency}
+
+\begin{lstlisting}
+Claim
+  |
+  v
+Compare against multiple generated summaries
+  |
+  v
+Measure recurrence
+  |
+  v
+Flag low-consensus claims
+\end{lstlisting}
+
+\subsection*{Method B -- Source-Grounded NLI}
+
+\begin{lstlisting}
+Claim
+  |
+  v
+Compare directly against source
+  |
+  v
+Determine entailment
+  |
+  v
+Flag unsupported claims
+\end{lstlisting}
+
+On the 46 injected unsupported claims:
+
+\begin{lstlisting}
+Method A: 95.7% recall
+Method B: 100.0% recall
+\end{lstlisting}
+
+On the 86 supported controls:
+
+\begin{lstlisting}
+Method A: 5.8% false positive rate
+Method B: 4.7% false positive rate
+\end{lstlisting}
+
+The two Method A failures demonstrate that \textbf{consistency is not equivalent to truth}. An LLM can repeatedly produce the same unsupported entity attribution or causal interpretation because the claim fits a plausible narrative pattern.
+
+The results therefore support a practical distinction:
+
+\begin{quote}
+\textbf{Self-consistency can be a useful hallucination signal, but source-grounded verification provides a stronger basis for determining whether a claim is actually supported by evidence.}
+\end{quote}
+
+
+\section{Project Structure at a Glance}
+
+\begin{lstlisting}
+                 +----------------------+
+                 |   Source Documents   |
+                 +----------+-----------+
+                            |
+                            v
+                 +----------------------+
+                 |  Adversarial Claims  |
+                 |       Dataset        |
+                 +----------+-----------+
+                            |
+              +-------------+-------------+
+              |                           |
+              v                           v
+    +-------------------+       +--------------------+
+    |     Method A      |       |      Method B      |
+    | Self-Consistency  |       | Source-Grounded NLI|
+    +---------+---------+       +----------+---------+
+              |                            |
+              v                            v
+    +-------------------+       +--------------------+
+    | method_a_results  |       | method_b_results   |
+    |       .json       |       |       .json        |
+    +---------+---------+       +----------+---------+
+              |                            |
+              +-------------+--------------+
+                            |
+                            v
+                 +----------------------+
+                 |   Evaluation &       |
+                 |   Error Analysis     |
+                 +----------+-----------+
+                            |
+                            v
+                 +----------------------+
+                 | evaluation_summary   |
+                 |        .json         |
+                 +----------------------+
+\end{lstlisting}
+
+
+\section*{License}
+
+MIT License. See \texttt{LICENSE} for details.
+
+\section*{Citation}
+
+If you use this benchmark or methodology in research, please cite this repository.
+
+\end{document}
